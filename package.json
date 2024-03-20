@@ -1,0 +1,36 @@
+{
+	"name": "tinie.xyz",
+	"repository": "https://github.com/IamSebastianDev/tinie.xyz.git",
+	"author": "Sebastian Heinz <sebsatian@iamsebastian.dev>",
+	"license": "MIT",
+	"private": true,
+  "workspaces": [
+    "packages/**/*",
+    "apps/*",
+    "docs"
+  ],
+  "scripts": {
+    "preci": "rm -rf node_modules",
+    "ci": "yarn install --frozen-lockfile",
+    "setup": "npx husky install",
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "test": "turbo test",
+    "test:coverage": "turbo test:coverage",
+    "publish": "yarn workspace @repo/publish publish",
+    "publish:dry-run": "yarn workspace @repo/publish publish:dry-run"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.0.3",
+    "@commitlint/config-conventional": "^19.0.3",
+    "alex": "^11.0.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "turbo": "^1.12.5",
+    "typescript": "^5.4.2"
+  },
+  "lint-staged": {
+    "*.{ts,css,md}": "prettier --write"
+  }
+}
