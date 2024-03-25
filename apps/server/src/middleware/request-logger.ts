@@ -8,26 +8,23 @@ export const requestLogger = () => (app: App) => {
         .onBeforeHandle(({ request, requestID }: any) => {
             const { pathname } = new URL(request.url);
             console.log(
-                blue(`[Tinie.xyz]:`),
                 dim(`[${requestID}]`),
                 bgLightYellow(`[${new Date().toISOString()}]`),
-                bgLightGreen(` ${bold(request.method)}::${pathname} `),
+                bgLightGreen(` (REQ) ${bold(request.method)}::${pathname} `),
             );
         })
         .onAfterHandle(({ request, requestID }: any) => {
             const { pathname } = new URL(request.url);
             console.log(
-                blue(`[Tinie.xyz]:`),
                 dim(`[${requestID}]`),
                 bgLightYellow(`[${new Date().toISOString()}]`),
-                bgLightGreen(` ${bold(request.method)}::${pathname} `),
+                bgLightGreen(` (RES) ${bold(request.method)}::${pathname} `),
                 bgLightGreen(` ${bold(`OK`)} `),
             );
         })
         .onError(({ code, error, request, requestID }: any) => {
             const { pathname } = new URL(request.url);
             console.log(
-                red(`[Tinie.xyz]:`),
                 dim(`[${requestID}]`),
                 bgLightYellow(`[${new Date().toISOString()}]`),
                 bgLightRed(` ${bold(request.method)}::${pathname} `),
