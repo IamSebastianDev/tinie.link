@@ -1,7 +1,7 @@
 /** @format */
 
 import { blue, bold, dim, underline } from 'kolorist';
-import { App } from '../bootstrap';
+import type { App } from '../bootstrap';
 
 export type Opts = { name: string };
 
