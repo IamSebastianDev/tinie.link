@@ -5,20 +5,17 @@
 	"license": "MIT",
 	"private": true,
   "workspaces": [
-    "packages/**/*",
-    "apps/*",
-    "docs"
+    "packages/*",
+    "apps/*"
   ],
   "scripts": {
     "preci": "rm -rf node_modules",
-    "ci": "yarn install --frozen-lockfile",
+    "ci": "bun install --frozen-lockfile",
     "setup": "npx husky install",
     "build": "turbo build",
     "dev": "turbo dev",
     "test": "turbo test",
-    "test:coverage": "turbo test:coverage",
-    "publish": "yarn workspace @repo/publish publish",
-    "publish:dry-run": "yarn workspace @repo/publish publish:dry-run"
+    "test:coverage": "turbo test:coverage"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.0.3",
