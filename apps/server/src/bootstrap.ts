@@ -18,7 +18,7 @@ declare module 'bun' {
 export const app = new Elysia();
 export type App = typeof app;
 
-app.use(staticPlugin({ assets: './assets', prefix: 'assets' }))
+app.use(staticPlugin({ assets: './assets', prefix: 'assets', ignorePatterns: [/\.ico/gim] }))
     .use(cors())
     .use(compression())
     .use(helmet())
