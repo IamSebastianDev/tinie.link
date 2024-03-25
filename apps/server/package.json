@@ -1,0 +1,25 @@
+{
+  "name": "@tinie/server",
+  "version": "0.0.0",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@repo/typescript-config": "0.0.0",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "^1.0.2",
+    "@elysiajs/static": "^1.0.2",
+    "elysia": "^1.0.7",
+    "elysia-compression": "^0.0.7",
+    "elysia-helmet": "^1.0.2",
+    "kolorist": "^1.8.0"
+  },
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "build": "bun build src/index.ts"
+  }
+}
