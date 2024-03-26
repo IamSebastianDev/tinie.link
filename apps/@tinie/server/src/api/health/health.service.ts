@@ -2,14 +2,14 @@
 
 import { cpuUsage } from 'process';
 import { totalmem, freemem, uptime } from 'os';
+import { getDbStatus } from '@tinie/dynamo';
 
 export const HealthService = () => {
     return {
-        get: () => {
+        get: async () => {
             return {
-                cpuUsage: cpuUsage(),
-                totalMemory: totalmem(),
-                freeMemory: freemem(),
+                server: true,
+                db: await getDbStatus(),
                 uptime: uptime(),
             };
         },

@@ -9,5 +9,5 @@ export const HealthController = (app: App) =>
             .decorate({
                 HealthService: HealthService(),
             })
-            .get('/', ({ HealthService }) => HealthService.get()),
+            .get('/', async ({ HealthService }) => await HealthService.get()),
     );
