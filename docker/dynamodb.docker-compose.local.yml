@@ -1,0 +1,15 @@
+# @format
+
+version: '3.8'
+services:
+    dynamodb-local:
+        image: amazon/dynamodb-local
+        container_name: tinie-xyz-dynamodb
+        ports:
+            - '8000:8000'
+        command: '-jar DynamoDBLocal.jar -sharedDb'
+        networks:
+            - tiniexyz
+networks:
+    tiniexyz:
+        driver: bridge
