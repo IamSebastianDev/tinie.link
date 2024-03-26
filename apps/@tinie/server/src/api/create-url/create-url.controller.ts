@@ -4,7 +4,7 @@ import { t } from 'elysia';
 import type { App } from '../../bootstrap';
 import { CreateUrlService } from './create-url.service';
 
-export const CreateUrlRouter = (app: App) =>
+export const CreateUrlController = (app: App) =>
     app.group('create-url/', (app) =>
         app
             .decorate({

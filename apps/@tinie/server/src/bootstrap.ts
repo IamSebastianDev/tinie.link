@@ -23,8 +23,9 @@ export const app = new Elysia()
         return {
             requestID: set.headers[`X-Request-ID`],
         };
-    })
-    .use(staticPlugin({ assets: './assets', prefix: 'assets', ignorePatterns: [/\.ico/gim] }))
+    });
+
+app.use(staticPlugin({ assets: './assets', prefix: 'assets', ignorePatterns: [/\.ico/gim] }))
     .use(cors())
     .use(compression())
     .use(helmet())
