@@ -33,7 +33,7 @@ export const loq =
                     bgLightRed(` Error: ${code} `),
                 );
                 for (const line of error.stack?.split('\n') ?? []) {
-                    console.log(red(`[Tinie.xyz]:`), red(line));
+                    console.log(red(line));
                 }
             });
     };
