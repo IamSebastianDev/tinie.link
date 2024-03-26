@@ -24,7 +24,7 @@ export const JSend = () => {
             .onError(({ code, error }) => {
                 // Return a status 'fail' on validation issue
                 if (code === 'VALIDATION') {
-                    return { status: 'fail', data: error.message ?? null };
+                    return { status: 'fail', data: JSON.parse(error.message ?? null) };
                 }
 
                 return {
