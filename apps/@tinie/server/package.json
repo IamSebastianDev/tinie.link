@@ -15,6 +15,7 @@
     "@elysia-plugin/loq": "0.0.0",
     "@elysiajs/cors": "^1.0.2",
     "@elysiajs/static": "^1.0.2",
+    "base62": "^2.0.1",
     "elysia": "^1.0.7",
     "elysia-compression": "^0.0.7",
     "elysia-helmet": "^1.0.2",
