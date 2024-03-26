@@ -23,13 +23,11 @@ export const app = new Elysia()
         return {
             requestID: set.headers[`X-Request-ID`],
         };
-    });
-
-app.use(staticPlugin({ assets: './assets', prefix: 'assets', ignorePatterns: [/\.ico/gim] }))
+    })
+    .use(staticPlugin({ assets: './assets', prefix: 'assets', ignorePatterns: [/\.ico/gim] }))
     .use(cors())
     .use(compression())
     .use(helmet())
-    .use(loq())
-    .use(startUpReporter());
+    .use(loq());
 
 export type App = typeof app;
