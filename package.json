@@ -15,7 +15,10 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "test": "turbo test",
-    "test:coverage": "turbo test:coverage"
+    "test:coverage": "turbo test:coverage",
+    "db:migrate": "yarn workspace @tinie/dynamo run migrate",
+    "dynamodb:up": "docker-compose -f ./docker/dynamodb.docker-compose.local.yml up -d",
+    "dynamodb:down": "docker-compose -f ./docker/dynamodb.docker-compose.local.yml down"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.0.3",
