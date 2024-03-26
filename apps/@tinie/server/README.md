@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # @tinie/server
 
 To install dependencies:

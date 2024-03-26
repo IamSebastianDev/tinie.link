@@ -1,6 +1,6 @@
 /** @format */
 
-import type { App } from '../bootstrap';
+import type Elysia from 'elysia';
 
 export type JSendResponse<T = any> =
     | {
@@ -18,8 +18,8 @@ export type JSendResponse<T = any> =
           data: Error | T | string;
       };
 
-export const JSendResponder = () => {
-    return (app: App) => {
+export const JSend = () => {
+    return <App extends Elysia>(app: App) => {
         return app
             .onError(({ code, error }) => {
                 // Return a status 'fail' on validation issue

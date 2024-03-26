@@ -4,7 +4,8 @@
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
-    "@repo/typescript-config": "0.0.0",
+    "@repo/config": "0.0.0",
+    "@elysia-plugin/jsend": "0.0.0",
     "@types/bun": "latest"
   },
   "peerDependencies": {
