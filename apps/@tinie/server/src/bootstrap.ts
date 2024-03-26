@@ -5,7 +5,6 @@ import { staticPlugin } from '@elysiajs/static';
 import { cors } from '@elysiajs/cors';
 import { compression } from 'elysia-compression';
 import { helmet } from 'elysia-helmet';
-import { startUpReporter } from './middleware/startup-reporter';
 import { loq } from '@elysia-plugin/loq';
 
 declare module 'bun' {
