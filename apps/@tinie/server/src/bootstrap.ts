@@ -6,7 +6,6 @@ import { cors } from '@elysiajs/cors';
 import { compression } from 'elysia-compression';
 import { helmet } from 'elysia-helmet';
 import { startUpReporter } from './middleware/startup-reporter';
-import { requestId } from './middleware/request-id';
 import { loq } from '@elysia-plugin/loq';
 
 declare module 'bun' {
@@ -15,13 +14,22 @@ declare module 'bun' {
     }
 }
 
-export const app = new Elysia();
-export type App = typeof app;
+export const app = new Elysia()
+    // Add request id here so that app retains it's derived type
+    .onRequest(({ set, request: { headers } }) => {
+        set.headers[`X-Request-ID`] = headers.get(`X-Request-ID`) || crypto.randomUUID();
+    })
+    .derive(({ set }) => {
+        return {
+            requestID: set.headers[`X-Request-ID`],
+        };
+    });
 
 app.use(staticPlugin({ assets: './assets', prefix: 'assets', ignorePatterns: [/\.ico/gim] }))
     .use(cors())
     .use(compression())
     .use(helmet())
-    .use(requestId())
     .use(loq())
     .use(startUpReporter());
+
+export type App = typeof app;
