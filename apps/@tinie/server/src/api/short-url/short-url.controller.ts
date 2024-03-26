@@ -3,9 +3,10 @@
 import { NotFoundError, t } from 'elysia';
 import type { App } from '../../bootstrap';
 import { ShortUrlService } from './short-url.service';
+import { updateUrlEntry } from '@tinie/dynamo';
 
 export const ShortUrlController = (app: App) =>
-    app.group('short-url/', (app) =>
+    app.group('/short-url', (app) =>
         app
             .decorate({
                 ShortUrlService: ShortUrlService(),
@@ -13,22 +14,25 @@ export const ShortUrlController = (app: App) =>
             .get(
                 '/:short',
                 async ({ ShortUrlService, params, set }) => {
-                    const long = await ShortUrlService.get(params.short);
+                    const { long_url } = (await ShortUrlService.get(params.short)) ?? {};
 
-                    console.log({ long });
-
-                    if (long) {
+                    if (long_url) {
                         set.status = 301;
-                        set.redirect = long;
+                        set.redirect = long_url;
+                        // Increment the visited count
+                        updateUrlEntry(params.short);
+                        return;
                     }
 
-                    throw new NotFoundError('No matching url was found');
+                    throw new NotFoundError('No matching URL could be retrieved.');
                 },
                 {
-                    // validation
+                    // Validate the incoming Short url
                     params: t.Object({
                         short: t.String({
-                            description: 'Must be a valid url',
+                            maxLength: 7,
+                            description:
+                                'The 7 character short URL identifier used to translate the short URL into a long URL.',
                         }),
                     }),
                 },
