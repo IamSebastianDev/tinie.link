@@ -5,13 +5,14 @@
   "type": "module",
   "devDependencies": {
     "@repo/config": "0.0.0",
-    "@elysia-plugin/jsend": "0.0.0",
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@elysia-plugin/jsend": "0.0.0",
+    "@elysia-plugin/loq": "0.0.0",
     "@elysiajs/cors": "^1.0.2",
     "@elysiajs/static": "^1.0.2",
     "elysia": "^1.0.7",

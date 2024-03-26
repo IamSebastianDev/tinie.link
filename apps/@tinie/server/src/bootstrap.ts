@@ -5,9 +5,9 @@ import { staticPlugin } from '@elysiajs/static';
 import { cors } from '@elysiajs/cors';
 import { compression } from 'elysia-compression';
 import { helmet } from 'elysia-helmet';
-import { requestLogger } from './middleware/request-logger';
 import { startUpReporter } from './middleware/startup-reporter';
 import { requestId } from './middleware/request-id';
+import { loq } from '@elysia-plugin/loq';
 
 declare module 'bun' {
     interface Env {
@@ -23,5 +23,5 @@ app.use(staticPlugin({ assets: './assets', prefix: 'assets', ignorePatterns: [/\
     .use(compression())
     .use(helmet())
     .use(requestId())
-    .use(requestLogger())
-    .use(startUpReporter({ name: process.env.APP_NAME }));
+    .use(loq())
+    .use(startUpReporter());

@@ -1,14 +1,16 @@
 {
-  "name": "@elysia-plugin/jsend",
+  "name": "@elysia-plugin/loq",
   "version": "0.0.0",
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
     "@types/bun": "latest",
-    "@repo/config": "0.0.0",
     "elysia": "^1.0.9"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "kolorist": "^1.8.0"
   }
 }
