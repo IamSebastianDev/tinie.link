@@ -1,0 +1,13 @@
+{
+  "name": "@tinie/models",
+  "version": "0.0.0",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@repo/config": "0.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
