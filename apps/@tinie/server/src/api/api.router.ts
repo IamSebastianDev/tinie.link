@@ -3,9 +3,6 @@
 import Elysia from 'elysia';
 import { HealthRouter } from './health/health.router';
 import { JSend } from '@elysia-plugin/jsend';
+import type { App } from '../bootstrap';
 
-export const ApiRouter = new Elysia({ prefix: '/api/v1' })
-    // Add global middleware
-    .use(JSend())
-    // Add routers
-    .use(HealthRouter);
+export const ApiRouter = (app: App) => app.group('api/v1', (app) => app.use(JSend()).use(HealthRouter));

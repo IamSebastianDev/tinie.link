@@ -2,9 +2,13 @@
 
 import Elysia from 'elysia';
 import { HealthService } from './health.service';
+import type { App } from '../../bootstrap';
 
-export const HealthRouter = new Elysia({ prefix: '/health' })
-    .decorate({
-        HealthService: HealthService(),
-    })
-    .get('/', ({ HealthService }) => HealthService.get());
+export const HealthRouter = (app: App) =>
+    app.group('health/', (app) =>
+        app
+            .decorate({
+                HealthService: HealthService(),
+            })
+            .get('/', ({ HealthService }) => HealthService.get()),
+    );
