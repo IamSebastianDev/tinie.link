@@ -1,6 +1,5 @@
 /** @format */
 
-import Elysia from 'elysia';
 import { HealthRouter } from './health/health.router';
 import { JSend } from '@elysia-plugin/jsend';
 import type { App } from '../bootstrap';

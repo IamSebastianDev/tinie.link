@@ -1,6 +1,5 @@
 /** @format */
 
-import Elysia from 'elysia';
 import { HealthService } from './health.service';
 import type { App } from '../../bootstrap';
 
