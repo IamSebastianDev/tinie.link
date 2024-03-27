@@ -17,8 +17,6 @@
     "@tinie/models": "0.0.0"
   },
   "scripts": {
-    "dev": "bun --watch src/index.ts",
-    "build": "bun build src/index.ts",
     "migrate": "bun src/migration.ts"
   }
 }

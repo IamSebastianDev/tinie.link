@@ -15,10 +15,5 @@
     "@iasd/handle-async": "^2.0.0",
     "@tinie/models": "0.0.0",
     "ioredis": "^5.3.2"
-  },
-  "scripts": {
-    "dev": "bun --watch src/index.ts",
-    "build": "bun build src/index.ts",
-    "migrate": "bun src/migration.ts"
   }
 }

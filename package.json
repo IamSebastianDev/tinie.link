@@ -13,6 +13,7 @@
     "ci": "bun install --frozen-lockfile",
     "setup": "npx husky install",
     "build": "turbo build",
+    "start": "turbo start",
     "dev": "turbo dev",
     "test": "turbo test",
     "test:coverage": "turbo test:coverage",
