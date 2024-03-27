@@ -7,12 +7,6 @@ import { compression } from 'elysia-compression';
 import { helmet } from 'elysia-helmet';
 import { loq } from '@elysia-plugin/loq';
 
-declare module 'bun' {
-    interface Env {
-        APP_NAME: string;
-    }
-}
-
 export const app = new Elysia()
     // Add request id here so that app retains it's derived type
     .onRequest(({ set, request: { headers } }) => {
