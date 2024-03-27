@@ -19,6 +19,7 @@
     "test": "turbo test",
     "test:coverage": "turbo test:coverage",
     "docker:build": "docker build  -t tinie-xyz-webserver:latest -f ./apps/@tinie/server/dockerfile.server .",
+    "db:migrate:dev":"bun run packages/@tinie/dynamo/migrations/create-url-table.ts",
     "db:migrate": "docker exec -it tinie-xyz-webserver sh -c 'bun run packages/@tinie/dynamo/migrations/create-url-table.ts' -d",
     "db:up": "docker-compose -f docker-compose.db.yml up -d",
     "db:down": "docker-compose -f docker-compose.db.yml down",
