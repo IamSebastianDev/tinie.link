@@ -12,9 +12,6 @@ export const RangeService = () => {
     getNewRangeFromZookeeper();
 
     return {
-        fetchRange: async () => {
-            return await getNewRangeFromZookeeper();
-        },
         getNumber: async () => {
             if (_range.length === 0) {
                 await getNewRangeFromZookeeper();
