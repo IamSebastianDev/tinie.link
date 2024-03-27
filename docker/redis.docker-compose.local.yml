@@ -1,0 +1,10 @@
+# @format
+
+version: '3.8'
+
+services:
+    redis:
+        image: redis:latest
+        container_name: tinie-xyz-redis
+        ports:
+            - '6379:6379'
