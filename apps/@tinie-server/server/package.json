@@ -1,0 +1,32 @@
+{
+  "name": "@tinie/server",
+  "version": "0.0.0",
+  "module": "./src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@repo/config": "0.0.0",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@elysia-plugin/jsend": "0.0.0",
+    "@elysia-plugin/loq": "0.0.0",
+    "@elysiajs/cors": "^1.0.2",
+    "@elysiajs/static": "^1.0.2",
+    "@iasd/handle-async": "^2.0.0",
+    "@tinie/dynamo": "0.0.0",
+    "@tinie/cache": "0.0.0",
+    "@tinie/models": "0.0.0",
+    "base62": "^2.0.1",
+    "elysia": "^1.0.7",
+    "elysia-compression": "^0.0.7",
+    "elysia-helmet": "^1.0.2",
+    "kolorist": "^1.8.0"
+  },
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "start": "bun run src/index.ts"
+  }
+}

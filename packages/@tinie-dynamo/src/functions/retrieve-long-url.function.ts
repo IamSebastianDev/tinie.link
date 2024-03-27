@@ -3,7 +3,7 @@
 import { handleAsync } from '@iasd/handle-async';
 import { client } from '..';
 import { AttributeValue, GetItemCommand } from '@aws-sdk/client-dynamodb';
-import type { UrlModel } from '@tinie/models';
+import type { UrlModel } from '../../../@tinie-models';
 
 export const retrieveLongUrl = async (short: string) => {
     return await handleAsync(

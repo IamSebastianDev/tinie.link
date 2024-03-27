@@ -1,7 +1,7 @@
 /** @format */
 
 import { handleAsync } from '@iasd/handle-async';
-import type { UrlModel } from '@tinie/models';
+import type { UrlModel } from '../../../@tinie-models';
 import { client } from '../client';
 
 export const addShortUrl = async (short: string, long: string) => {

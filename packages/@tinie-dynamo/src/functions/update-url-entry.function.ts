@@ -1,7 +1,7 @@
 /** @format */
 
 import { handleAsync } from '@iasd/handle-async';
-import type { UrlModel } from '@tinie/models';
+import type { UrlModel } from '../../../@tinie-models';
 import { client } from '..';
 import { UpdateItemCommand } from '@aws-sdk/client-dynamodb';
 
