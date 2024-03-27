@@ -34,7 +34,7 @@ export const ShortUrlController = (app: App) =>
                         const cached_url = await CacheService.get(params.short);
 
                         if (!cached_url) {
-                            return false;
+                            return;
                         }
 
                         set.status = 301;
