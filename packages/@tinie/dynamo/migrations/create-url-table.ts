@@ -1,7 +1,7 @@
 /** @format */
 
 import { CreateTableCommand, DeleteTableCommand, DynamoDBClient, ListTablesCommand } from '@aws-sdk/client-dynamodb';
-import { client } from './client';
+import { client } from '../src/client';
 
 export const migration = {
     run: async (client: DynamoDBClient, refresh: boolean = false) => {

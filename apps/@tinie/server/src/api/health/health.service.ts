@@ -13,6 +13,7 @@ export const HealthService = () => {
                 cache: await getCacheStatus(),
                 db: await getDbStatus(),
                 uptime: uptime(),
+                cache_ttl: process.env.REDIS_TTL,
             };
         },
     };

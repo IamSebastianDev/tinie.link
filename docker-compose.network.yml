@@ -4,7 +4,7 @@
 
 version: '3.8'
 services:
-    dynamodb-local:
+    dynamodb:
         image: amazon/dynamodb-local
         container_name: tinie-xyz-dynamodb
         ports:
@@ -21,15 +21,14 @@ services:
         ports:
             - '3000:3000'
         command: >
-            sh -c "yarn db:migrate &&
-                    yarn start"
+            sh -c "bun run start:server"
         environment:
-            - AWS_REGION=local
-            - AWS_DYNAMO_ENDPOINT=http://dynamodb-local:8000
-            - AWS_ACCESS_KEY=dummy
-            - AWS_ACCESS_SECRET=dummy
-            - REDIS_CONNECT=redis://redis:6379/0
-            - REDIS_TTL=3600
+            - AWS_REGION=${AWS_REGION}
+            - AWS_DYNAMO_ENDPOINT=${AWS_DYNAMO_ENDPOINT}
+            - AWS_ACCESS_KEY=${AWS_ACCESS_KEY}
+            - AWS_ACCESS_SECRET=${AWS_ACCESS_SECRET}
+            - REDIS_CONNECT=${REDIS_CONNECT}
+            - REDIS_TTL=${REDIS_TTL}
         depends_on:
-            - dynamodb-local
+            - dynamodb
             - redis

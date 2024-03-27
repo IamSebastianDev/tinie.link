@@ -10,7 +10,6 @@ services:
         ports:
             - '8000:8000'
         command: '-jar DynamoDBLocal.jar -sharedDb'
-
     redis:
         image: redis:latest
         container_name: tinie-xyz-redis
