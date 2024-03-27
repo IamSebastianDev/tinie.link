@@ -24,8 +24,7 @@ export const ShortUrlController = (app: App) =>
                         throw new NotFoundError('No matching URL could be retrieved.');
                     }
 
-                    console.log('Still hitting the controller');
-
+                    console.log(`Retrieved URL from DB.`);
                     set.status = 301;
                     set.redirect = long_url;
                 },
@@ -37,6 +36,7 @@ export const ShortUrlController = (app: App) =>
                             return;
                         }
 
+                        console.log(`Retrieved URL from Cache.`);
                         set.status = 301;
                         set.redirect = cached_url;
                         return true;
