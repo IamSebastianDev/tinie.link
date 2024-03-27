@@ -26,8 +26,8 @@ services:
         environment:
             - AWS_REGION=local
             - AWS_DYNAMO_ENDPOINT=http://dynamodb-local:8000
-            - AWS_ACCESS_KEY_ID=dummy
-            - AWS_SECRET_ACCESS_KEY=dummy
+            - AWS_ACCESS_KEY=dummy
+            - AWS_ACCESS_SECRET=dummy
             - REDIS_CONNECT=redis://redis:6379/0
             - REDIS_TTL=3600
         depends_on:
