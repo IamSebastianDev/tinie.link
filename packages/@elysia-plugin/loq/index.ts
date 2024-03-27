@@ -15,15 +15,6 @@ export const loq =
                     bgLightGreen(` (REQ) ${bold(request.method)}::${pathname} `),
                 );
             })
-            .onAfterHandle(({ request, requestID }: any) => {
-                const { pathname } = new URL(request.url);
-                console.log(
-                    dim(`[${requestID}]`),
-                    bgLightYellow(`[${new Date().toISOString()}]`),
-                    bgLightGreen(` (RES) ${bold(request.method)}::${pathname} `),
-                    bgLightGreen(` ${bold(`OK`)} `),
-                );
-            })
             .onError(({ code, error, request, requestID }: any) => {
                 const { pathname } = new URL(request.url);
                 console.log(
