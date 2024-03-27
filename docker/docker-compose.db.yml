@@ -1,10 +1,18 @@
 # @format
 
+# docker-compose.databases.yml
+
 version: '3.8'
 services:
-    dynamodb-local:
+    dynamodb:
         image: amazon/dynamodb-local
         container_name: tinie-xyz-dynamodb
         ports:
             - '8000:8000'
         command: '-jar DynamoDBLocal.jar -sharedDb'
+
+    redis:
+        image: redis:latest
+        container_name: tinie-xyz-redis
+        ports:
+            - '6379:6379'

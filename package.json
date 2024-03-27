@@ -18,10 +18,10 @@
     "test": "turbo test",
     "test:coverage": "turbo test:coverage",
     "db:migrate": "yarn workspace @tinie/dynamo run migrate",
-    "dynamodb:up": "docker-compose -f ./docker/dynamodb.docker-compose.local.yml up -d",
-    "dynamodb:down": "docker-compose -f ./docker/dynamodb.docker-compose.local.yml down",
-    "redis:up": "docker-compose -f ./docker/redis.docker-compose.local.yml up -d",
-    "redis:down": "docker-compose -f ./docker/redis.docker-compose.local.yml down"
+    "db:up": "docker-compose -f ./docker/docker-compose.db.yml up -d",
+    "db:down": "docker-compose -f docker-compose.databases.yml down",
+    "system:up": "docker-compose -f ./docker/docker-compose.system.yml up -d", 
+    "system:down": "docker-compose -f ./docker/docker-compose.system.yml down"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.0.3",

@@ -1,0 +1,35 @@
+# @format
+
+# docker-compose.full.yml
+
+version: '3.8'
+services:
+    dynamodb-local:
+        image: amazon/dynamodb-local
+        container_name: tinie-xyz-dynamodb
+        ports:
+            - '8000:8000'
+        command: '-jar DynamoDBLocal.jar -sharedDb'
+    redis:
+        image: redis:latest
+        container_name: tinie-xyz-redis
+        ports:
+            - '6379:6379'
+    tinie:
+        image: tinie-xyz-webserver:latest
+        container_name: tinie-xyz-webserver
+        ports:
+            - '3000:3000'
+        command: >
+            sh -c "yarn db:migrate &&
+                    yarn start"
+        environment:
+            - AWS_REGION=local
+            - AWS_DYNAMO_ENDPOINT=http://dynamodb-local:8000
+            - AWS_ACCESS_KEY_ID=dummy
+            - AWS_SECRET_ACCESS_KEY=dummy
+            - REDIS_CONNECT=redis://redis:6379/0
+            - REDIS_TTL=3600
+        depends_on:
+            - dynamodb-local
+            - redis
