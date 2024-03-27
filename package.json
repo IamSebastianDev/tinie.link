@@ -17,11 +17,12 @@
     "dev": "turbo dev",
     "test": "turbo test",
     "test:coverage": "turbo test:coverage",
+    "docker:build": "docker build  -t tinie-xyz-webserver:latest -f ./apps/@tinie/server/dockerfile.server .",
     "db:migrate": "yarn workspace @tinie/dynamo run migrate",
-    "db:up": "docker-compose -f ./docker/docker-compose.db.yml up -d",
-    "db:down": "docker-compose -f docker-compose.databases.yml down",
-    "system:up": "docker-compose -f ./docker/docker-compose.system.yml up -d", 
-    "system:down": "docker-compose -f ./docker/docker-compose.system.yml down"
+    "db:up": "docker-compose -f docker-compose.db.yml up -d",
+    "db:down": "docker-compose -f docker-compose.db.yml down",
+    "system:up": "docker-compose -f ./docker-compose.network.yml up -d", 
+    "system:down": "docker-compose -f ./docker-compose.network.yml down"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.0.3",
