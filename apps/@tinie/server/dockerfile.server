@@ -10,9 +10,15 @@ RUN apk --no-cache add nodejs yarn --repository=http://dl-cdn.alpinelinux.org/al
 FROM base as install
 # Copy the necessary monorepo files to the container
 COPY package.json package.json
-COPY turbo.json turbo.json
-COPY ./apps/@tinie/server ./apps/@tinie/server
-COPY ./packages ./packages
 
 # Install workspace dependencies
 RUN yarn install
+
+FROM install as release
+
+# Copy node modules
+COPY --from=install /app /app
+
+# Copy repository content
+COPY ./apps/@tinie/server ./apps/@tinie/server
+COPY ./packages ./packages
