@@ -17,6 +17,7 @@
     "@elysiajs/static": "^1.0.2",
     "@iasd/handle-async": "^2.0.0",
     "@tinie/dynamo": "0.0.0",
+    "@tinie/cache": "0.0.0",
     "@tinie/models": "0.0.0",
     "base62": "^2.0.1",
     "elysia": "^1.0.7",
