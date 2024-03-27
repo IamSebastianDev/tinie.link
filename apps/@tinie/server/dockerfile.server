@@ -1,18 +1,18 @@
 # Use the official Node.js 16 image as a parent image
-FROM node:20
+FROM oven/bun:alpine as base
 
-# Set the working directory
+# Set workdir
 WORKDIR /app
 
+# Add yarn for workspace mangagement
+RUN apk --no-cache add nodejs yarn --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
+
+FROM base as install
 # Copy the necessary monorepo files to the container
 COPY package.json package.json
 COPY turbo.json turbo.json
 COPY ./apps/@tinie/server ./apps/@tinie/server
 COPY ./packages ./packages
-
-# Install Bun & Add Bun to PATH
-RUN curl -fsSL https://bun.sh/install | bash
-ENV PATH="/root/.bun/bin:${PATH}"
 
 # Install workspace dependencies
 RUN yarn install
