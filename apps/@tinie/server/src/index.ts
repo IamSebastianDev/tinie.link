@@ -5,6 +5,9 @@ import { ApiRouter } from './api/api.router';
 import { app } from './bootstrap';
 import { startUpReporter } from './middleware/startup-reporter';
 
-// Start the application using the Port provided
-// by the environment.
-app.use(startUpReporter()).use(ApiRouter).listen(process.env.PORT);
+app.use(startUpReporter())
+    // Add the API Router to the Elysia stack
+    .use(ApiRouter)
+    // Start the application using the Port provided
+    // by the environment.
+    .listen(process.env.PORT);
