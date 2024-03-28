@@ -1,9 +1,9 @@
 /** @format */
 
-import { cpuUsage } from 'process';
-import { totalmem, freemem, uptime } from 'os';
+import { uptime } from 'os';
 import { getDbStatus } from '../../../../../packages/@tinie-dynamo/src';
 import { getCacheStatus } from '../../../../../packages/@tinie-cache/src';
+import { getZookeeperStatus } from '@tinie/range';
 
 export const HealthService = () => {
     return {
@@ -12,6 +12,7 @@ export const HealthService = () => {
                 server: true,
                 cache: await getCacheStatus(),
                 db: await getDbStatus(),
+                zookeeper: await getZookeeperStatus(),
                 uptime: uptime(),
                 cache_ttl: process.env.REDIS_TTL,
             };

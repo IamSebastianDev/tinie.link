@@ -16,6 +16,7 @@
     "dev": "turbo dev",
     "start:client": "reserved for starting client later",
     "start:server": "cd ./apps/@tinie-server && bun run ./src/index.ts",
+    "start:worker": "cd ./workers/@tinie-zookeeper && bun dev",
     "docker:build": "docker build  -t tinie-xyz-webserver:latest -f ./apps/@tinie-server/dockerfile.server .",
     "db:migrate:local":"bun run packages/@tinie-dynamo/migrations/create-url-table.ts",
     "db:migrate:docker": "docker exec -it tinie-xyz-webserver sh -c 'bun run packages/@tinie-dynamo/migrations/create-url-table.ts' -d",
