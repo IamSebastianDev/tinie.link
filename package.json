@@ -6,7 +6,8 @@
 	"private": true,
   "workspaces": [
     "packages/*",
-    "apps/*"
+    "apps/*",
+    "workers/*"
   ],
   "scripts": {
     "preci": "rm -rf node_modules",

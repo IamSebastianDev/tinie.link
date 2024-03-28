@@ -24,10 +24,10 @@ services:
             sh -c "bun run start:server"
         environment:
             - AWS_REGION=${AWS_REGION}
-            - AWS_DYNAMO_ENDPOINT=${AWS_DYNAMO_ENDPOINT}
+            - AWS_DYNAMO_ENDPOINT=http://dynamodb:8000
             - AWS_ACCESS_KEY=${AWS_ACCESS_KEY}
             - AWS_ACCESS_SECRET=${AWS_ACCESS_SECRET}
-            - REDIS_CONNECT=${REDIS_CONNECT}
+            - REDIS_CONNECT=redis://redis:6379/0
             - REDIS_TTL=${REDIS_TTL}
         depends_on:
             - dynamodb
