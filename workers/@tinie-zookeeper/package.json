@@ -3,14 +3,17 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "wrangler dev src/index.ts",
-    "deploy": "wrangler deploy --minify src/index.ts"
+    "deploy": "wrangler deploy --minify src/index.ts",
+    "generate": "drizzle-kit generate:sqlite --schema=src/schema.ts",
+    "up": "drizzle-kit up:sqlite --schema=src/schema.ts"
   },
   "dependencies": {
+    "drizzle-orm": "^0.30.5",
     "hono": "^4.1.5"
   },
   "devDependencies": {
-    "@repo/config": "0.0.0",
     "@cloudflare/workers-types": "^4.20240208.0",
-    "wrangler": "^3.32.0"
+    "@repo/config": "0.0.0",
+    "wrangler": "^3.39.0"
   }
 }
