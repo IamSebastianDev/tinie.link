@@ -1,0 +1,18 @@
+{
+  "name": "@tinie/range",
+  "version": "0.0.0",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@repo/config": "0.0.0",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@tinie/models": "0.0.0",
+    "@iasd/handle-async": "^2.0.0"
+  }
+}
