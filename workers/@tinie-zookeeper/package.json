@@ -4,8 +4,7 @@
   "scripts": {
     "dev": "wrangler dev src/index.ts",
     "deploy": "wrangler deploy --minify src/index.ts",
-    "generate": "drizzle-kit generate:sqlite --schema=src/schema.ts",
-    "up": "drizzle-kit up:sqlite --schema=src/schema.ts"
+    "db:migrate:local": "wrangler d1 execute tinie-zookeeper --local --file=./src/db/schema/range-allocations.schema.sql"
   },
   "dependencies": {
     "drizzle-orm": "^0.30.5",

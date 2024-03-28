@@ -15,10 +15,19 @@ app.get('/', async (c) => {
     const { last_row_id: allocatedRangeId } = results.meta;
 
     return c.json({
-        result: 'success',
+        status: 'success',
         data: {
             allocatedRangeId,
         },
     });
 });
+
+app.get('/ready', (c) =>
+    c.json({
+        status: 'success',
+        data: {
+            ok: true,
+        },
+    }),
+);
 export default app;
