@@ -1,9 +1,5 @@
 <!-- @format -->
 
-<p align="center">
-    <img src="./apps/@tinie-server/assets/tinie.logo.png" alt="logo"/>
-</p>
-
 # tinie.xyz
 
 Tinie.xyz is a modern, performant link shortening application built for scale and performance.
