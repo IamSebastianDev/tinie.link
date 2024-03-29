@@ -1,0 +1,66 @@
+/** @format */
+
+/* Primary and Accent Colors with Shades */
+:root {
+    /* Vibrant Cyan */
+    --color-cyan-1: 31, 195, 170;
+    --color-cyan-2: 63, 207, 182;
+    --color-cyan-3: 95, 219, 194;
+
+    /* Electric Purple */
+    --color-purple-1: 178, 44, 255;
+    --color-purple-2: 194, 110, 255;
+    --color-purple-3: 210, 176, 255;
+
+    /* Neon Pink */
+    --color-pink-1: 255, 72, 164;
+    --color-pink-2: 255, 108, 184;
+    --color-pink-3: 255, 144, 204;
+
+    /* White Smoke */
+    --color-light-1: 245, 245, 245;
+    --color-light-2: 250, 250, 250;
+    --color-light-3: 255, 255, 255;
+
+    /* Dark Charcoal */
+    --color-dark-1: 20, 20, 20;
+    --color-dark-2: 48, 48, 48;
+    --color-dark-3: 70, 70, 70;
+}
+
+/* Color Variables for Usage */
+:root {
+    /* Vibrant Cyan */
+    --ui-color-primary-1: rgba(var(--color-cyan-1), 1);
+    --ui-color-primary-2: rgba(var(--color-cyan-2), 1);
+    --ui-color-primary-3: rgba(var(--color-cyan-3), 1);
+    --ui-color-cyan-1: rgba(var(--color-cyan-1), 1);
+    --ui-color-cyan-2: rgba(var(--color-cyan-2), 1);
+    --ui-color-cyan-3: rgba(var(--color-cyan-3), 1);
+
+    /* Electric Purple */
+    --ui-color-accent-1: rgba(var(--color-purple-1), 1);
+    --ui-color-accent-2: rgba(var(--color-purple-2), 1);
+    --ui-color-accent-3: rgba(var(--color-purple-3), 1);
+    --ui-color-purple-1: rgba(var(--color-purple-1), 1);
+    --ui-color-purple-2: rgba(var(--color-purple-2), 1);
+    --ui-color-purple-3: rgba(var(--color-purple-3), 1);
+
+    /* Neon Pink */
+    --ui-color-highlight-1: rgba(var(--color-pink-1), 1);
+    --ui-color-highlight-2: rgba(var(--color-pink-2), 1);
+    --ui-color-highlight-3: rgba(var(--color-pink-3), 1);
+    --ui-color-pink-1: rgba(var(--color-pink-1), 1);
+    --ui-color-pink-2: rgba(var(--color-pink-2), 1);
+    --ui-color-pink-3: rgba(var(--color-pink-3), 1);
+
+    /* Light */
+    --ui-color-light-1: rgba(var(--color-light-1), 1);
+    --ui-color-light-2: rgba(var(--color-light-2), 1);
+    --ui-color-light-3: rgba(var(--color-light-3), 1);
+
+    /* Dark */
+    --ui-color-dark-1: rgba(var(--color-dark-1), 1);
+    --ui-color-dark-2: rgba(var(--color-dark-2), 1);
+    --ui-color-dark-3: rgba(var(--color-dark-3), 1);
+}
