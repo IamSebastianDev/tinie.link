@@ -6,6 +6,8 @@ import { cors } from '@elysiajs/cors';
 import { compression } from 'elysia-compression';
 import { helmet } from 'elysia-helmet';
 import { loq } from '../../../packages/@elysia-plugin-loq';
+import swagger from '@elysiajs/swagger';
+import { documentation } from '@elysia-plugin/scalar';
 
 export const app = new Elysia()
     // Add request id here so that app retains it's derived type
@@ -28,9 +30,10 @@ export const app = new Elysia()
 // `helmet()` add certain security parameters and headers to the chain
 // `loq()` is a custom middleware to log requests
 app.use(staticPlugin({ assets: './assets', prefix: 'assets', ignorePatterns: [/\.ico/gim] }))
+    .use(documentation())
     .use(cors())
     .use(compression())
-    .use(helmet())
+    // .use(helmet())
     .use(loq());
 
 export type App = typeof app;

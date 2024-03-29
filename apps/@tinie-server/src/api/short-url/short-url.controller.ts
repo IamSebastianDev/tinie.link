@@ -55,6 +55,18 @@ export const ShortUrlController = (app: App) =>
                                 'The 7 character short URL identifier used to translate the short URL into a long URL.',
                         }),
                     }),
+                    detail: {
+                        responses: {
+                            '301': {
+                                description: 'Redirect the User to the associated long URL.',
+                            },
+                            '404': {
+                                description: 'Redirect the User to the 404 page.',
+                            },
+                        },
+                        description:
+                            'Redirects the Requester to the stored URL that is associated with the passed short URL.',
+                    },
                 },
             ),
     );

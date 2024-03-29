@@ -18,7 +18,7 @@ export const CreateUrlService = () => {
                     Ok: (response) => {
                         if (!!response) {
                             return {
-                                short_url: response.short_url,
+                                ...response,
                             };
                         }
 

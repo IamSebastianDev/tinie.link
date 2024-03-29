@@ -1,6 +1,5 @@
 {
-  "name": "@elysia-plugin/loq",
-  "version": "0.0.0",
+  "name": "@elysia-plugin/scalar",
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
@@ -12,6 +11,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "kolorist": "^1.8.0"
-  }
+    "@elysiajs/swagger": "^1.0.3"
+  },
+  "private": true
 }

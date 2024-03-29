@@ -1,23 +1,25 @@
 {
   "name": "@tinie/server",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "module": "./src/index.ts",
   "type": "module",
   "devDependencies": {
-    "@repo/config": "0.0.0",
+    "@repo/config": "workspace:0.0.0",
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@elysia-plugin/jsend": "0.0.0",
-    "@elysia-plugin/loq": "0.0.0",
+    "@elysia-plugin/jsend": "workspace:0.0.0",
+    "@elysia-plugin/loq": "workspace:0.0.0",
+    "@elysia-plugin/scalar": "workspace:0.0.0",
     "@elysiajs/cors": "^1.0.2",
     "@elysiajs/static": "^1.0.2",
+    "@elysiajs/swagger": "^1.0.3",
     "@iasd/handle-async": "^2.0.0",
-    "@tinie/dynamo": "0.0.0",
     "@tinie/cache": "0.0.0",
+    "@tinie/dynamo": "0.0.0",
     "@tinie/models": "0.0.0",
     "@tinie/range": "0.0.0",
     "base62": "^2.0.1",

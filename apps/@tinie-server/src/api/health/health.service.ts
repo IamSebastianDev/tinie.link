@@ -11,10 +11,11 @@ export const HealthService = () => {
             return {
                 server: true,
                 cache: await getCacheStatus(),
-                db: await getDbStatus(),
+                db: !!(await getDbStatus()),
                 zookeeper: await getZookeeperStatus(),
                 uptime: uptime(),
                 cache_ttl: process.env.REDIS_TTL,
+                version: (await import('../../../package.json')).version,
             };
         },
     };
