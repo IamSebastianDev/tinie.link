@@ -68,5 +68,33 @@ export const ShortUrlController = (app: App) =>
                             'Redirects the Requester to the stored URL that is associated with the passed short URL.',
                     },
                 },
+            )
+            .get(
+                '/:short/details',
+                async ({ params, ShortUrlService }) => {
+                    return await ShortUrlService.details(params.short);
+                },
+                {
+                    // Validate the incoming Short url
+                    params: t.Object({
+                        short: t.String({
+                            maxLength: 7,
+                            description:
+                                'The 7 character short URL identifier for which the details should be fetched.',
+                        }),
+                    }),
+                    detail: {
+                        responses: {
+                            '200': {
+                                description:
+                                    'Returns the `creation date`, associated `long url` and the `visits` count for the given URL.',
+                            },
+                            '404': {
+                                description: 'Redirect the User to the 404 page.',
+                            },
+                        },
+                        description: 'Shows `creation date`, `long url` and `visits` count for the given short URL.',
+                    },
+                },
             ),
     );

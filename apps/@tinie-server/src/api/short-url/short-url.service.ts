@@ -16,5 +16,16 @@ export const ShortUrlService = () => {
                 },
             );
         },
+        details: async (short: string) => {
+            return await handleAsync(
+                async () => {
+                    return retrieveLongUrl(short);
+                },
+                {
+                    Ok: (val) => val,
+                    Err: () => null,
+                },
+            );
+        },
     };
 };
