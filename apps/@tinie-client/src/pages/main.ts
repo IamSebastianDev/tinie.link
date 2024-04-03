@@ -3,6 +3,7 @@
 import '../assets/styles/reset.css';
 import '../assets/styles/app.css';
 import '@fontsource/montserrat';
+import '@fontsource/raleway';
 import { createComponent, render } from '@grainular/nord';
 import { TopNavigation } from '../lib/components/navigation/top-navigation.component';
 import { Hero } from '../lib/components/hero/hero.component';

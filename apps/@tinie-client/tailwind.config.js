@@ -8,7 +8,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Montserrat', 'ui-sans-serif', 'system-ui'],
+                sans: ['Raleway', 'Montserrat', 'ui-sans-serif', 'system-ui'],
             },
         },
     },

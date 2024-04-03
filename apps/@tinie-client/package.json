@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@fontsource/montserrat": "^5.0.17",
+    "@fontsource/raleway": "^5.0.17",
     "@grainular/nord": "latest"
   }
 }
