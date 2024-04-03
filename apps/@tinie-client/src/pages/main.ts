@@ -1,10 +1,11 @@
 /** @format */
 
-import '../assets/reset.css';
-import '../assets/app.css';
+import '../assets/styles/reset.css';
+import '../assets/styles/app.css';
 import { createComponent, render } from '@grainular/nord';
 import { TopNavigation } from '../lib/components/navigation/top-navigation.component';
 import { Hero } from '../lib/components/hero/hero.component';
+import { Footer } from '../lib/components/footer/footer.component';
 
 const App = createComponent((html) => {
     return html`
@@ -17,6 +18,7 @@ const App = createComponent((html) => {
         <!-- Sidebar Component -->
         <div></div>
         <!-- Footer Component -->
+        ${Footer({})}
     `;
 });
 

@@ -1,7 +1,7 @@
 /** @format */
 
-import '../../assets/reset.css';
-import '../../assets/app.css';
+import '../../assets/styles/reset.css';
+import '../../assets/styles/app.css';
 import { createComponent, render } from '@grainular/nord';
 
 const App = createComponent((html) => {
