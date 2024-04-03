@@ -16,6 +16,7 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
+    "@fontsource/montserrat": "^5.0.17",
     "@grainular/nord": "latest"
   }
 }

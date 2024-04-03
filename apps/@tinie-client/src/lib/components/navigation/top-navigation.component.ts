@@ -22,7 +22,7 @@ export const TopNavigation = createComponent((html) => {
         },
     ];
 
-    return html`<div class="fixed left-0 right-0 top-0 z-10 transition-colors duration-500 border-b border-zinc-700 border-opacity-0" ${scrollTop('border-opacity-100 bg-zinc-950')}>
+    return html`<div class="fixed left-0 right-0 top-0 z-20 transition-colors duration-500 border-b border-zinc-700 border-opacity-0" ${scrollTop('border-opacity-100 bg-zinc-950')}>
         <nav class="py-4 px-8 flex flex-row gap-4 font-sans max-w-7xl w-full m-auto">
             <!-- Logo group -->
             <div class="flex flex-row gap-2 items-center">
