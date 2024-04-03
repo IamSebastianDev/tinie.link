@@ -1,7 +1,43 @@
 /** @format */
 
-import { createComponent } from '@grainular/nord';
+import { createComponent, each } from '@grainular/nord';
+import logo from '../../../assets/images/hero.webp';
+import github from '../../../assets/images/github.svg';
+import { Link } from '../ui/Link/Link.component';
+import { scrollTop } from '../../directives/scroll-top.directive';
 
 export const TopNavigation = createComponent((html) => {
-    return html`<nav class="fixed left-0 right-0 top-0 bg-slate-800 h-5 z-10"></nav>`;
+    const links = [
+        {
+            label: 'Story',
+            href: '',
+        },
+        {
+            label: 'Statistics',
+            href: '',
+        },
+        {
+            label: 'API',
+            href: '',
+        },
+    ];
+
+    return html`<div class="fixed left-0 right-0 top-0 z-10 transition-colors duration-500 border-b border-zinc-700 border-opacity-0" ${scrollTop('border-opacity-100 bg-zinc-950')}>
+        <nav class="py-4 px-8 flex flex-row gap-4 font-sans max-w-7xl w-full m-auto">
+            <!-- Logo group -->
+            <div class="flex flex-row gap-2 items-center">
+                ${Link({ label: 'Tinie.xyz', href: '/' }, (html) => html`<img class="w-6 h-6 rounded-lg border" src="${logo}" />`)}
+            </div>
+            <!-- Link Group -->
+            <div class="ml-auto items-center">
+                <ul class="flex flex-row gap-6 items-center h-full">
+                    ${each(links).as((link) => html`<li>${Link({ ...link })}</li>`)}
+                </ul>
+            </div>
+            <!-- Controls Group -->
+            <div class="border-l border-zinc-700 text-zinc-100 pl-4 flex">
+                ${Link({ href: 'https://github.com/iamsebastiandev/tinie.xyz', classes: 'h-full' }, (html) => html`<img class="w-5 h-5" src="${github}" /> `)}
+            <div>
+        </nav>
+    </div>`;
 });
