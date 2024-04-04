@@ -3,7 +3,7 @@
 import { createComponent, each } from '@grainular/nord';
 import logo from '../../../assets/images/hero.webp';
 import github from '../../../assets/images/github.svg';
-import { Link } from '../ui/Link/Link.component';
+import { Link } from '../ui/link/link.component';
 import { scrollTop } from '../../directives/scroll-top.directive';
 
 export const TopNavigation = createComponent((html) => {
