@@ -1,8 +1,8 @@
 <!-- @format -->
 
-# tinie.xyz
+# tinie.link
 
-Tinie.xyz is a modern, performant link shortening application built for scale and performance.
+Tinie.link is a modern, performant link shortening application built for scale and performance.
 
 ## Overview
 
@@ -23,7 +23,7 @@ Tinie utilizes the following technologies and services:
 To develop or test Tinie locally, follow this guide:
 
 -   **Install workspace dependencies:** Install [Bun](https://bun.sh) & [Docker](https://www.docker.com).
--   **Clone the repository:** Run `git clone https://github.com/IamSebastianDev/tinie.xyz.git` to clone the repository.
+-   **Clone the repository:** Run `git clone https://github.com/IamSebastianDev/tinie.link.git` to clone the repository.
 -   **Install package dependencies:** Run `bun install` to install dependencies.
 -   **Add the environment file:** Create a `.env.local` file in the workspace root and set the environment variables as shown in the `.env.example` file.
 -   **Start the cloudflare workers:** Run `bun run start:worker` to start the worker. You might need to log in to your `Cloudflare` account.

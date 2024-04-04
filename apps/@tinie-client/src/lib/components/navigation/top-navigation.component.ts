@@ -26,7 +26,7 @@ export const TopNavigation = createComponent((html) => {
         <nav class="py-4 px-8 flex flex-row gap-4 font-sans max-w-7xl w-full m-auto">
             <!-- Logo group -->
             <div class="flex flex-row gap-2 items-center">
-                ${Link({ label: 'Tinie.xyz', href: '/' }, (html) => html`<img class="w-6 h-6 rounded-lg border" src="${logo}" />`)}
+                ${Link({ label: 'Tinie.link', href: '/' }, (html) => html`<img class="w-6 h-6 rounded-lg border" src="${logo}" />`)}
             </div>
             <!-- Link Group -->
             <div class="ml-auto items-center">
@@ -36,7 +36,7 @@ export const TopNavigation = createComponent((html) => {
             </div>
             <!-- Controls Group -->
             <div class="border-l border-zinc-700 text-zinc-100 pl-4 flex">
-                ${Link({ href: 'https://github.com/iamsebastiandev/tinie.xyz', classes: 'h-full' }, (html) => html`<img class="w-5 h-5" src="${github}" /> `)}
+                ${Link({ href: 'https://github.com/iamsebastiandev/tinie.link', classes: 'h-full' }, (html) => html`<img class="w-5 h-5" src="${github}" /> `)}
             <div>
         </nav>
     </div>`;

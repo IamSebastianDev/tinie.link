@@ -12,7 +12,7 @@ export const documentation =
                 exclude: ['/api', '/api/json'],
                 documentation: {
                     info: {
-                        title: 'Tinie.xyz API Documentation',
+                        title: 'Tinie.link API Documentation',
                         version: 'API v.1',
                         description: 'Tinie is a modern, performance focused link shortener without tracking.',
                         license: {
