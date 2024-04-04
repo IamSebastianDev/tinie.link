@@ -16,8 +16,11 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
-    "@fontsource/montserrat": "^5.0.17",
+    "@fontsource/quicksand": "^5.0.17",
     "@fontsource/raleway": "^5.0.17",
-    "@grainular/nord": "latest"
+    "@grainular/nord": "latest",
+    "@grainular/nord-forms": "^1.0.1",
+    "@tinie/models": "0.0.0",
+    "tailwind-heropatterns": "^0.0.8"
   }
 }

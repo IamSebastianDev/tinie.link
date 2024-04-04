@@ -8,9 +8,23 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Raleway', 'Montserrat', 'ui-sans-serif', 'system-ui'],
+                sans: ['Raleway', 'ui-sans-serif', 'system-ui'],
+                quicksand: 'Quicksand',
+            },
+            boxShadow: {
+                glow: ['0 0px 20px rgba(245, 158, 11, 0.25)', '0 0px 65px rgba(245, 158, 11, 0.1)'],
             },
         },
     },
-    plugins: [],
+    plugins: [
+        require('tailwind-heropatterns')({
+            variants: ['topography'],
+            colors: {
+                default: 'rgb(24, 24, 27)',
+            },
+            opacity: {
+                default: '0.3',
+            },
+        }),
+    ],
 };
