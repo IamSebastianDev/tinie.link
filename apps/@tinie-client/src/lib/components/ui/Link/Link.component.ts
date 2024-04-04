@@ -1,7 +1,7 @@
 /** @format */
 
 import { createComponent } from '@grainular/nord';
-import { LinkProps } from './Link.props';
+import { LinkProps } from './link.props';
 import { classes as c } from '../../../scripts/classes';
 
 export const Link = createComponent<LinkProps>(
@@ -10,13 +10,13 @@ export const Link = createComponent<LinkProps>(
             rel="no-referrer no-opener"
             href="${href}"
             class="${c(
-                'text-zinc-300 text-sm hover:text-zinc-100 font-semibold hover:underline underline-offset-4 inline-flex flex-row-reverse items-center gap-2',
+                'text-zinc-300 text-sm hover:text-amber-600 font-semibold hover:underline underline-offset-4 inline-flex flex-row items-center gap-2',
                 classes,
             )}"
             target="${target}"
             ${disabled ? 'disabled' : undefined}
         >
-            ${label} ${$children}
+            ${$children} ${label}
         </a>`;
     },
 );
