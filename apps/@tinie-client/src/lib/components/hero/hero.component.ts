@@ -27,7 +27,8 @@ export const Hero = createComponent((html) => {
                 Life is Too Short for Long Links
             </h1>
             <h3 class="text-zinc-200 tracking-wider text-lg max-xl:text-sm font-semibold font-quicksand">
-                🚀 Tinie will turbocharge your linking experience - effortless, free, and privacy-first
+                With Tinie, enjoy open-source, cloud-powered link sharing: always free, always private, incredibly fast.
+                🚀
             </h3>
         </div>
         <!-- Input -->
