@@ -1,6 +1,6 @@
 /** @format */
 
-import { createComponent, derived, each, when } from '@grainular/nord';
+import { createComponent, each, when } from '@grainular/nord';
 import { ListHeader } from './list-header.component';
 import { urlList } from '../../grains/url-list.grain';
 import { ListItem } from './list-item.component';
