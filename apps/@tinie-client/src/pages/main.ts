@@ -11,6 +11,7 @@ import { TopNavigation } from '../lib/components/navigation/top-navigation.compo
 import { Hero } from '../lib/components/hero/hero.component';
 import { Footer } from '../lib/components/footer/footer.component';
 import { List } from '../lib/components/list/list.component';
+import { PopupOutlet } from '../lib/components/popup/popup-outlet';
 
 const App = createComponent((html) => {
     return html`
@@ -22,6 +23,8 @@ const App = createComponent((html) => {
         ${List({})}
         <!-- Footer Component -->
         ${Footer({})}
+        <!-- Popup outlet -->
+        ${PopupOutlet({})}
     `;
 });
 
