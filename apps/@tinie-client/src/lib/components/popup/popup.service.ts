@@ -10,7 +10,7 @@ export const popupService = {
     popup: readonly(popup),
     data: readonly(data),
     open: <T extends Record<PropertyKey, unknown>>(component: Component<T>, cData: T) => {
-        const outlet = document.querySelector('#popup-inner')!;
+        const outlet = document.querySelector('#popup-content')!;
         result.set(null);
         data.set(cData);
         popup.set(component);
@@ -19,8 +19,8 @@ export const popupService = {
 
         return readonly(result);
     },
-    close: (res: any) => {
-        const outlet = document.querySelector('#popup-inner')!;
+    close: (res?: any) => {
+        const outlet = document.querySelector('#popup-content')!;
         [...(outlet?.childNodes ?? [])].forEach((n) => n.remove());
         popup.set(null);
         data.set(null);
