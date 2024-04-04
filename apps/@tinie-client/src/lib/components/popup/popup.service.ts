@@ -10,6 +10,7 @@ export const popupService = {
     popup: readonly(popup),
     data: readonly(data),
     open: <T extends Record<PropertyKey, unknown>>(component: Component<T>, cData: T) => {
+        document.body.style.overflow = 'hidden';
         const outlet = document.querySelector('#popup-content')!;
         result.set(null);
         data.set(cData);
@@ -25,5 +26,6 @@ export const popupService = {
         popup.set(null);
         data.set(null);
         result.set(res);
+        document.body.style.overflow = 'auto';
     },
 };

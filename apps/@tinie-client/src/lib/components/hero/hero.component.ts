@@ -5,14 +5,14 @@ import background from '../../../assets/images/hero.webp';
 import { Input } from './input.component';
 import { fetchShortUrlService } from '../../services/fetch-short-url.service';
 import { shrinkHero } from '../../directives/shrink-hero.directive';
+import { popupService } from '../popup/popup.service';
+import { Result } from './result.component';
 
 export const Hero = createComponent((html) => {
     const onSubmit = (short: string) => {
         fetchShortUrlService.fetchShortUrl(short).subscribe((result) => {
-            if (!!result) {
-                console.log({ result });
-            }
-        }, false);
+            popupService.open(Result, { url: result! });
+        });
     };
 
     return html`<div class="hero relative bg-zinc-950 w-full py-16" ${shrinkHero('h-screen')}>
