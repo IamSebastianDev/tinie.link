@@ -16,6 +16,7 @@ import { Input } from '../lib/components/shortening/input.component';
 import { Result } from '../lib/components/shortening/result.component';
 import { fetchShortUrlService } from '../lib/services/fetch-short-url.service';
 import { popupService } from '../lib/services/popup.service';
+import { listEmpty } from '../lib/grains/list-empty.grain';
 
 const App = createComponent((html) => {
     const onSubmit = (short: string) => {
@@ -31,7 +32,7 @@ const App = createComponent((html) => {
         ${TopNavigation({})}
         <!-- Hero Components -->
         ${Hero(
-            {},
+            { listEmpty },
             (html) =>
                 html` <div
                         class="self-center z-10 flex flex-col justify-center items-center max-w-7xl w-full m-auto text-center px-10 max-xl:max-w-4xl gap-5"

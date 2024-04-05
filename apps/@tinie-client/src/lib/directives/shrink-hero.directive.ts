@@ -1,12 +1,11 @@
 /** @format */
 
-import { createDirective } from '@grainular/nord';
-import { listEmpty } from '../grains/list-empty.grain';
+import { ReadonlyGrain, createDirective } from '@grainular/nord';
 
-export const shrinkHero = (classes: string) =>
+export const shrinkHero = (classes: string, grain: ReadonlyGrain<boolean>) =>
     createDirective<Element>(
         (element) => {
-            listEmpty.subscribe((state) => {
+            grain.subscribe((state) => {
                 if (!state) {
                     element.classList.remove(...classes.split(' '));
                     return;
