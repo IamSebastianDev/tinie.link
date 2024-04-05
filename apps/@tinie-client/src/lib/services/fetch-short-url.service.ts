@@ -5,8 +5,6 @@ import { JSendResponse, UrlModel } from '@tinie/models';
 import { urlList } from '../grains/url-list.grain';
 
 class FetchShortUrlService {
-    private short = grain<UrlModel | null>(null);
-
     /**
      * Abort controller
      */
@@ -22,6 +20,7 @@ class FetchShortUrlService {
     }
 
     fetchShortUrl(longUrl: string) {
+        const url = grain<null | UrlModel>(null);
         const { signal } = this.abortPreviousRequest();
 
         const body = JSON.stringify({ long_url: longUrl });
@@ -30,18 +29,14 @@ class FetchShortUrlService {
             .then(({ data, status }: JSendResponse<UrlModel>) => {
                 // When the request is successful, add the data to the URL grain
                 if (status === 'success') {
-                    this.short.set(data);
+                    url.set(data);
                     urlList.update((cur) => [data, ...cur]);
                 }
 
                 // @todo -> handle error states
             });
 
-        return this.shortUrl;
-    }
-
-    get shortUrl() {
-        return readonly(this.short);
+        return url;
     }
 }
 
