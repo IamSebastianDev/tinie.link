@@ -9,6 +9,7 @@ import { loq } from '../../../packages/@elysia-plugin-loq';
 import { documentation } from '@elysia-plugin/scalar';
 import { resolve, join } from 'node:path';
 import { rateLimit } from 'elysia-rate-limit';
+import { Rewrite } from '@elysia-plugin/rewrite';
 
 export const app = new Elysia()
     // Add request id here so that app retains it's derived type
@@ -43,6 +44,11 @@ app.use(
     //.use(helmet()) // Helmet appears to cause some issues with scalar, so we skip it for now
     .use(loq())
     .use(documentation())
+    .use(
+        Rewrite({
+            '^\\/[a-zA-Z0-9]{7}': (pathname) => `/api/v1/short-url${pathname}`,
+        }),
+    )
     .get('/', () => Bun.file(resolve(join(process.cwd(), './public/index.html'))))
     .get('/404', () => Bun.file(resolve(join(process.cwd(), './public/not-found/index.html'))));
 

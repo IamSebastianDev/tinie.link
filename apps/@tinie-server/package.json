@@ -11,6 +11,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@elysia-plugin/rewrite": "workspace:0.0.0",
     "@elysia-plugin/jsend": "workspace:0.0.0",
     "@elysia-plugin/loq": "workspace:0.0.0",
     "@elysia-plugin/scalar": "workspace:0.0.0",
