@@ -1,41 +1,31 @@
 ---
-name: Bug report
-about: Create a report to help us improve Tinie.link
-title: '[bug]'
-labels: 'bug'
+name: 🐛 Bug Report
+about: Create a Bug or Issue Report to help us improve Tinie.link 🫶
+title: '[🐛 Bug]'
+labels: ['Bug', 'Issue', 'Needs Triage']
 assignees: 'IamSebastianDev'
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+Hej! Thanks for taking a look at [Tinie.link](https://tinie.link). If you're having any issues, you're in the right place. Describe the issue you're having and we'll se what we can do about it.
 
-**To Reproduce**
-Steps to reproduce the behavior:
+### Description
 
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+<!-- A clear and concise description of the bug and it's happenstances -->
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+### Steps to Reproduce
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+<!-- How we can reproduce the issue -->
 
-**Desktop (please complete the following information):**
+### Expectation
 
-- OS: [e.g. iOS]
-- Browser [e.g. chrome, safari]
-- Version [e.g. 22]
+<!-- A description of what you expected to happen. -->
 
-**Smartphone (please complete the following information):**
+### Additional Information
 
-- Device: [e.g. iPhone6]
-- OS: [e.g. iOS8.1]
-- Browser [e.g. stock browser, safari]
-- Version [e.g. 22]
+<!-- Screenshots, Os, Browser, any additional Context goes here -->
 
-**Additional context**
-Add any other context about the problem here.
+### Finishing up
+
+- [ ] I have searched the existing issues for similar issues and have found nothing?
+- [ ] I really like Tinie.link. Please fix it.
