@@ -1,18 +1,42 @@
-# Use the official Node.js 16 image as a parent image
+# We are using a lightweight bun:alpine image as base image
+# to reduce image size
 FROM oven/bun:alpine as base
 
-# Set workdir
+# Set a working directory
 WORKDIR /app
 
+# Install dependencies for all workspace packages
 FROM base as install
-# Copy the necessary monorepo files to the container
+
+# Install dev dependencies
+RUN mkdir -p /temp/dev
+RUN --mount=type=bind,target=/docker-context \
+    cd /docker-context/; \
+    find . \( -name "package.json" -o -name "bun.lockb" \) -mindepth 0 -maxdepth 4 -exec cp --parents "{}" /temp/dev/ \;
+
+RUN cd /temp/dev && bun install
+
+# Copy the created node_modules to the app directory,
+# then copy all other files
+
+FROM base AS build
+COPY --from=install /temp/dev/node_modules node_modules
 COPY . .
 
-# Install workspace dependencies
-RUN bun install
+# Build the Client files
+RUN cd /app/apps/@tinie-client && bun run build
 
-FROM install as build
+# Build the final Image by combining all created files
+FROM build as release
+COPY --from=install /temp/dev/node_modules node_modules
+COPY . .
+# Copy built client code to server code after the repository has been copied
+COPY --from=build /app/apps/@tinie-client/dist /app/apps/@tinie-server/public
 
-RUN cd apps/@tinie-client && bun run build
-COPY apps/@tinie-client/dist apps/@tinie-server/public
+# Clean up no longer needed files and directories
+RUN cd /app/apps/@tinie-client && rm -rf ./dist
+RUN cd / && rm -rf /temp
 
+# Start the server
+EXPOSE 3000/tcp
+ENTRYPOINT [ "bun", "run", "start:server"]
