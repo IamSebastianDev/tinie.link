@@ -18,7 +18,7 @@ export const TopNavigation = createComponent((html) => {
         },
         {
             label: 'API',
-            href: '',
+            href: '/api',
         },
     ];
 

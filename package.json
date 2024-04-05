@@ -17,13 +17,13 @@
     "start:client": "cd ./apps/@tinie-client && bun run dev",
     "start:server": "cd ./apps/@tinie-server && bun run ./src/index.ts",
     "start:worker": "cd ./workers/@tinie-zookeeper && bun dev",
-    "docker:build": "docker build  -t tinie-xyz-webserver:latest -f ./apps/@tinie-server/dockerfile.server .",
+    "docker:build": "docker build --no-cache-filter install -t tinie-webserver:latest -f ./docker/dockerfile.server . ",
     "db:migrate:local":"bun run packages/@tinie-dynamo/migrations/create-url-table.ts",
-    "db:migrate:docker": "docker exec -it tinie-xyz-webserver sh -c 'bun run packages/@tinie-dynamo/migrations/create-url-table.ts' -d",
-    "db:up": "docker compose -f ./docker-compose.db.yml up -d",
-    "db:down": "docker compose -f ./docker-compose.db.yml down",
-    "system:up": "docker compose -f ./docker-compose.network.yml up -d ", 
-    "system:down": "docker compose -f ./docker-compose.network.yml down "
+    "db:migrate:docker": "docker exec -it tinie-webserver sh -c 'bun run packages/@tinie-dynamo/migrations/create-url-table.ts' -d",
+    "db:up": "docker compose -f ./docker/docker-compose.db.yml up -d",
+    "db:down": "docker compose -f ./docker/docker-compose.db.yml down",
+    "system:up": "docker compose -f ./docker/docker-compose.network.yml up -d ", 
+    "system:down": "docker compose -f ./docker/docker-compose.network.yml down "
   },
   "devDependencies": {
     "@commitlint/cli": "^19.0.3",

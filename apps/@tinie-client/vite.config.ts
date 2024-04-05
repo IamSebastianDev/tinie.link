@@ -18,6 +18,7 @@ export default defineConfig({
     server: {
         strictPort: true,
         proxy: {
+            '/api/': 'http://localhost:3000',
             '/api/v1/': 'http://localhost:3000',
             '^/[A-Za-z0-9]{7}': {
                 target: 'http://localhost:3000',

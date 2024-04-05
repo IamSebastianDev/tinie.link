@@ -1,0 +1,9 @@
+**/node_modules
+docker
+**/.*
+.*
+bun.lockb
+commitlint.config.js
+**.env.local
+.env*
+turbo.json

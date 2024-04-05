@@ -1,5 +1,0 @@
-{ 
-  "include": ["./src/**/*.ts"],
-  "exclude": ["node_modules/*", "public/*"],
-  "extends": "@repo/config/server.json"
-}
