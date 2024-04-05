@@ -25,7 +25,7 @@ export const TopNavigation = createComponent((html) => {
     return html`<div class="fixed left-0 right-0 top-0 z-20 transition-colors duration-500 border-b border-zinc-700 border-opacity-0" ${scrollTop('border-opacity-100 bg-zinc-950')}>
         <nav class="py-4 px-8 flex flex-row gap-4 font-sans max-w-7xl w-full m-auto">
             <!-- Logo group -->
-            <div class="flex flex-row gap-2 items-center max-md:hidden">
+            <div class="flex flex-row gap-2 items-center max-sm:hidden">
                 ${Link({ label: 'Tinie.link', href: '/' }, (html) => html`<img class="w-6 h-6 rounded-lg border" src="${logo}" />`)}
             </div>
             <!-- Link Group -->
