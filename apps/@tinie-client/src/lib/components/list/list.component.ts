@@ -11,7 +11,7 @@ export const List = createComponent((html) => {
         ${when(listEmpty, (v) => !v)
             // Show url entries in List
             .then(
-                html`<div class="px-4 max-w-5xl w-full m-auto flex flex-col gap-1 max-h-screen  py-12">
+                html`<div class="px-4 max-w-5xl w-full m-auto flex flex-col gap-1 max-h-screen py-12">
                     <!-- List header -->
                     <div class="w-full m-auto">${ListHeader({})}</div>
                     <!-- List Rendering -->
