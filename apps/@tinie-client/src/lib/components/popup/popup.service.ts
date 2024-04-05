@@ -18,7 +18,7 @@ export const popupService = {
         [...(outlet?.childNodes ?? [])].forEach((n) => n.remove());
         outlet?.append(...component(cData));
 
-        return readonly(result);
+        return { result: readonly(result) };
     },
     close: (res?: any) => {
         const outlet = document.querySelector('#popup-content')!;
