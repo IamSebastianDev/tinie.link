@@ -14,7 +14,7 @@
     "ci": "bun install --frozen-lockfile",
     "setup": "npx husky init",
     "dev": "turbo dev",
-    "start:client": "reserved for starting client later",
+    "start:client": "cd ./apps/@tinie-client && bun run dev",
     "start:server": "cd ./apps/@tinie-server && bun run ./src/index.ts",
     "start:worker": "cd ./workers/@tinie-zookeeper && bun dev",
     "docker:build": "docker build  -t tinie-xyz-webserver:latest -f ./apps/@tinie-server/dockerfile.server .",
