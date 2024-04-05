@@ -18,6 +18,7 @@ services:
     tinie:
         image: tinie-webserver:latest
         container_name: tinie-webserver
+        restart: unless-stopped
         ports:
             - '3000:3000'
         command: >

@@ -2,6 +2,7 @@
   "name": "@elysia-plugin/scalar",
   "module": "index.ts",
   "type": "module",
+  "version": "0.0.0",
   "devDependencies": {
     "@repo/config": "0.0.0",
     "@types/bun": "latest",
