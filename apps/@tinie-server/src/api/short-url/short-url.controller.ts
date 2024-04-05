@@ -32,6 +32,7 @@ export const ShortUrlController = (app: App) =>
                     error: async ({ code, error, set }) => {
                         if (code === 'NOT_FOUND') {
                             set.redirect = '/404';
+                            return true;
                         }
                     },
                     beforeHandle: async ({ params, CacheService, set }) => {
