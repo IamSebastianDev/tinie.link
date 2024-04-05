@@ -39,7 +39,7 @@ export const Input = createComponent<InputProps>((html, { onSubmit }) => {
                 label: 'Shorten me!',
                 type: 'submit',
                 classes:
-                    'rounded-full bg-zinc-800 px-6 border-4 border-zinc-900 hover:bg-sky-500 duration-200 font-semibold whitespace-nowrap max-md:font-normal max-sm:text-sm max-sm:px-3',
+                    'rounded-full px-6 border-4 border-zinc-900 bg-sky-800 hover:bg-sky-600 text-zinc-300 active:bg-sky-400 duration-200 font-semibold whitespace-nowrap max-md:font-normal max-sm:text-sm max-sm:px-3',
             })}
         </label>
     </form>`;
