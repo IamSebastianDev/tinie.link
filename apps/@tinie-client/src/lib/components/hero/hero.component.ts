@@ -5,7 +5,7 @@ import background from '../../../assets/images/hero.webp';
 import { Input } from './input.component';
 import { fetchShortUrlService } from '../../services/fetch-short-url.service';
 import { shrinkHero } from '../../directives/shrink-hero.directive';
-import { popupService } from '../popup/popup.service';
+import { popupService } from '../../services/popup.service';
 import { Result } from './result.component';
 
 export const Hero = createComponent((html) => {

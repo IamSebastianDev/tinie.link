@@ -1,7 +1,7 @@
 /** @format */
 
 import { createComponent, when } from '@grainular/nord';
-import { popupService } from './popup.service';
+import { popupService } from '../../services/popup.service';
 import { Button } from '../ui/button/button.component';
 
 export const PopupOutlet = createComponent((html) => {

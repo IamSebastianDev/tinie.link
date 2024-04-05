@@ -3,8 +3,7 @@
 import { createComponent } from '@grainular/nord';
 import { Button } from '../ui/button/button.component';
 import trash from '../../../assets/images/trash.svg';
-
-import { popupService } from '../popup/popup.service';
+import { popupService } from '../../services/popup.service';
 
 export const Confirm = createComponent((html) => {
     return html`<div class="text-zinc-200 max-w-lg flex flex-col py-3 pb-0 gap-3">
