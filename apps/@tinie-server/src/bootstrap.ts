@@ -46,7 +46,7 @@ app.use(
     .use(documentation())
     .use(
         Rewrite({
-            '^\\/[a-zA-Z0-9]{7}': (pathname) => `/api/v1/short-url${pathname}`,
+            '^\\/[a-zA-Z0-9]{7}$': (pathname) => `/api/v1/short-url${pathname}`,
         }),
     )
     .get('/', () => Bun.file(resolve(join(process.cwd(), './public/index.html'))))
