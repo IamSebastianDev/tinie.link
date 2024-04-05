@@ -34,7 +34,7 @@ const App = createComponent((html) => {
                             {
                                 onClick: () => (window.location.href = '/'),
                                 classes:
-                                    'mx-auto rounded-full px-6 py-2 bg-sky-800  hover:bg-sky-600 text-zinc-300 active:bg-sky-400',
+                                    'mx-auto rounded-full px-8 py-3 text-xl bg-sky-800 hover:bg-sky-600 text-zinc-300 active:bg-sky-400 border-4 border-zinc-900',
                             },
                             (html) => html`Shorten Some Links Now!`,
                         )}
