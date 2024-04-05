@@ -1,7 +1,7 @@
 /** @format */
 
 import { createComponent } from '@grainular/nord';
-import { Link } from '../ui/link/link.component';
+import { Link } from '../ui-changed/link/link.component';
 
 export const Footer = createComponent((html) => {
     const year = new Date().getFullYear();

@@ -1,7 +1,7 @@
 /** @format */
 
 import { createComponent } from '@grainular/nord';
-import { Button } from '../ui/button/button.component';
+import { Button } from '../ui-changed/button/button.component';
 import trash from '../../../assets/images/trash.svg';
 import { popupService } from '../../services/popup.service';
 

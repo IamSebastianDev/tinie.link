@@ -2,7 +2,7 @@
 
 import { createComponent } from '@grainular/nord';
 import { createControl, required, createControlGroup } from '@grainular/nord-forms';
-import { Button } from '../ui/button/button.component';
+import { Button } from '../ui-changed/button/button.component';
 import link from '../../../assets/images/link.svg';
 
 export type InputProps = {

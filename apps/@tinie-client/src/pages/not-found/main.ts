@@ -6,7 +6,7 @@ import { createComponent, grain, readonly, render } from '@grainular/nord';
 import { Footer } from '../../lib/components/footer/footer.component';
 import { Hero } from '../../lib/components/hero/hero.component';
 import { TopNavigation } from '../../lib/components/navigation/top-navigation.component';
-import { Button } from '../../lib/components/ui/button/button.component';
+import { Button } from '../../lib/components/ui-changed/button/button.component';
 
 const App = createComponent((html) => {
     return html`

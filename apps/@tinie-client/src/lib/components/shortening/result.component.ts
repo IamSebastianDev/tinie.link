@@ -2,7 +2,7 @@
 
 import { createComponent } from '@grainular/nord';
 import { UrlModel } from '@tinie/models';
-import { Button } from '../ui/button/button.component';
+import { Button } from '../ui-changed/button/button.component';
 import copy from '../../../assets/images/copy.svg';
 import { environment } from '../../../pages/env';
 

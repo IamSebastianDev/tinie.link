@@ -2,7 +2,7 @@
 
 import { createComponent, when } from '@grainular/nord';
 import { popupService } from '../../services/popup.service';
-import { Button } from '../ui/button/button.component';
+import { Button } from '../ui-changed/button/button.component';
 
 export const PopupOutlet = createComponent((html) => {
     return html`<div id="popup-outlet">
