@@ -19,7 +19,7 @@ export const Result = createComponent<{ url: UrlModel }>((html, { url }) => {
     return html`<div class="text-zinc-200 max-w-lg flex flex-col py-3 gap-6">
         <div>Success! You can copy your created URL below 🫶</div>
         <div
-            class="bg-zinc-300 border borderx^-zinc-700 text-zinc-800 py-1 pl-3 pr-1 rounded-lg flex justify-between items-center"
+            class="bg-zinc-300 border border-zinc-700 text-zinc-800 py-1 pl-3 pr-1 rounded-lg flex justify-between items-center max-md:text-sm"
         >
             <span>${environment.base_url}/${url.short_url}</span>
             ${Button(
