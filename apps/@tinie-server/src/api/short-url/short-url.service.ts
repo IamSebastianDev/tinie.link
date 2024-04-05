@@ -12,7 +12,7 @@ export const ShortUrlService = () => {
                 },
                 {
                     Ok: (val) => val,
-                    Err: (error) => short,
+                    Err: (error) => null,
                 },
             );
         },
