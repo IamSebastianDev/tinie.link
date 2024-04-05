@@ -11,7 +11,9 @@ import { Result } from './result.component';
 export const Hero = createComponent((html) => {
     const onSubmit = (short: string) => {
         fetchShortUrlService.fetchShortUrl(short).subscribe((result) => {
-            popupService.open(Result, { url: result! });
+            if (result) {
+                popupService.open(Result, { url: result! });
+            }
         });
     };
 
