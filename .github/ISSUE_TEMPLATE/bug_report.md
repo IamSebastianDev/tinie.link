@@ -2,7 +2,7 @@
 name: 🐛 Bug Report
 about: Create a Bug or Issue Report to help us improve Tinie.link 🫶
 title: '[🐛 Bug]'
-labels: ['Bug', 'Issue', 'Needs Triage']
+labels: ['bug', 'issue', 'needs triage']
 assignees: 'IamSebastianDev'
 
 ---
