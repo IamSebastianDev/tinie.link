@@ -17,7 +17,7 @@
     "start:client": "cd ./apps/@tinie-client && bun run dev",
     "start:server": "cd ./apps/@tinie-server && bun run ./src/index.ts",
     "start:worker": "cd ./workers/@tinie-zookeeper && bun dev",
-    "docker:build": "docker build --no-cache-filter install -t tinie-webserver:latest -f ./docker/dockerfile.server . ",
+    "docker:build": "docker build --no-cache-filter install -t tinie-webserver:latest -f ./docker/dockerfile.server .",
     "db:migrate:local":"bun run packages/@tinie-dynamo/migrations/create-url-table.ts",
     "db:migrate:docker": "docker exec -it tinie-webserver sh -c 'bun run packages/@tinie-dynamo/migrations/create-url-table.ts' -d",
     "db:up": "docker compose -f ./docker/docker-compose.db.yml up -d",

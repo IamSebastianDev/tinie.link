@@ -13,6 +13,6 @@ RUN bun install
 
 FROM install as build
 
-RUN cd ./apps/@tinie-client && bun run build
-COPY ./apps/@tinie-client/dist ./apps/@tinie-server/public
+RUN cd apps/@tinie-client && bun run build
+COPY apps/@tinie-client/dist apps/@tinie-server/public
 
