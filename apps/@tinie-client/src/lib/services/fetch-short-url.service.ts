@@ -36,7 +36,7 @@ class FetchShortUrlService {
                 // @todo -> handle error states
             });
 
-        return url;
+        return readonly(url);
     }
 }
 
