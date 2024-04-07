@@ -4,7 +4,7 @@ import { grain, readonly } from '@grainular/nord';
 
 export type Message = {
     content: string;
-    type: 'ERROR'; // Extend to show different errors
+    type: 'ERROR' | 'SUCCESS'; // Extend to show different messages
 };
 
 export type ComposedMessage = Message & { close: () => void; id: string };

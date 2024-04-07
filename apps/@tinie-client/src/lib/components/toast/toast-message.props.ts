@@ -1,7 +1,7 @@
 /** @format */
 
 export type ToastMessageProps = {
-    type: 'ERROR';
+    type: 'ERROR' | 'SUCCESS';
     content: string;
     close: () => void;
 };
