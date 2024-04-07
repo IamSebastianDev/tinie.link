@@ -1,6 +1,6 @@
 /** @format */
 
-import { Component, Grain, grain, readonly } from '@grainular/nord';
+import { Component, grain, readonly } from '@grainular/nord';
 
 class PopupService {
     private _isOpen = grain<boolean>(false);
@@ -22,10 +22,12 @@ class PopupService {
             result.set(payload);
         });
 
-        this._isOpen.set(true);
-        document.body.style.overflow = 'hidden';
-        [...(this.outlet?.childNodes ?? [])].forEach((n) => n.remove());
-        this.outlet?.append(...component(payload));
+        window.setTimeout(() => {
+            this._isOpen.set(true);
+            document.body.style.overflow = 'hidden';
+            [...(this.outlet?.childNodes ?? [])].forEach((n) => n.remove());
+            this.outlet?.append(...component(payload));
+        });
 
         return {
             closed: readonly(this._closed),
