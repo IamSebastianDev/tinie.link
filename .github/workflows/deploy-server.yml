@@ -13,8 +13,9 @@ jobs:
     timeout-minutes: 15
     name: Build & Deploy Server to Render.com
     steps:
-      - name: Deploy to production
-        uses: johnbeynon/render-deploy-action@v0.0.8
-        with:
-          service-id: ${{ secrets.RENDER_SERVICE_ID }}
-          api-key: ${{ secrets.RENDER_API_KEY }}
+      - uses: actions/checkout@v4
+      - name: Deploy to Render
+        env:
+            deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: |
+            curl "$deploy_url"
