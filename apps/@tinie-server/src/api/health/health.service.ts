@@ -9,13 +9,16 @@ export const HealthService = () => {
     return {
         get: async () => {
             return {
-                server: true,
-                cache: await getCacheStatus(),
-                db: !!(await getDbStatus()),
-                zookeeper: await getZookeeperStatus(),
+                ok: true,
                 uptime: uptime(),
-                cache_ttl: process.env.REDIS_TTL,
                 version: (await import('../../../package.json')).version,
+            };
+        },
+        db: async () => {
+            return {
+                redis: await getCacheStatus(),
+                dynamodb: !!(await getDbStatus()),
+                cloudflare: await getZookeeperStatus(),
             };
         },
     };
