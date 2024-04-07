@@ -11,7 +11,7 @@ import { TopNavigation } from '../lib/components/navigation/top-navigation.compo
 import { Hero } from '../lib/components/hero/hero.component';
 import { Footer } from '../lib/components/footer/footer.component';
 import { List } from '../lib/components/list/list.component';
-import { PopupOutlet } from '../lib/components/popup/popup-outlet';
+import { PopupOutlet } from '../lib/components/popup/popup-outlet.component';
 import { Input } from '../lib/components/shortening/input.component';
 import { Result } from '../lib/components/shortening/result.component';
 import { fetchShortUrlService } from '../lib/services/fetch-short-url.service';
