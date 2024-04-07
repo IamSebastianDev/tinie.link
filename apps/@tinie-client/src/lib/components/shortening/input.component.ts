@@ -5,17 +5,21 @@ import { createControl, required, createControlGroup } from '@grainular/nord-for
 import { Button } from '../ui/button/button.component';
 import link from '../../../assets/images/link.svg';
 import { popupService } from '../../services/popup.service';
+import { isUrl } from '../../scripts/is-url.validator';
 
 export type InputProps = {
     onSubmit: (short: string) => void;
 };
+
 export const Input = createComponent<InputProps>((html, { onSubmit }) => {
+    // Create the Form
     const form = createControlGroup({
-        link: createControl<string | null>({ value: null }, [required]),
+        link: createControl<string>({ value: null }, [required, isUrl]),
     });
 
+    // Submit handler
     const onFormSubmit = async () => {
-        if (!form.isValid || !form.link.rawValue) {
+        if (!form.isValid || !form.link.isValid || !form.link.rawValue) {
             // @todo: Handle error message
             return;
         }
