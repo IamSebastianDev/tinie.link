@@ -11,12 +11,14 @@ import { Button } from '../ui/button/button.component';
 import { environment } from '../../../pages/env';
 import { popupService } from '../../services/popup.service';
 import { Confirm } from './confirm.component';
+import { toastMessageService } from '../../services/toast-message.service';
 
 export const ListItem = createComponent<{ entry: UrlModel }>((html, { entry }) => {
     const deleteEntry = () => {
         popupService.open(Confirm, {}).result.subscribe((result) => {
             if (!!result) {
                 urlList.update((list) => [...list.filter(({ short_url }) => short_url !== entry.short_url)]);
+                toastMessageService.dispatch({ type: 'SUCCESS', content: `Deleted successfully` });
             }
         });
     };
@@ -25,6 +27,7 @@ export const ListItem = createComponent<{ entry: UrlModel }>((html, { entry }) =
         // Copy value to clipboard
         try {
             await navigator.clipboard.writeText(`${environment.base_url}/${entry.short_url}`);
+            toastMessageService.dispatch({ type: 'SUCCESS', content: 'Copied successfully to clipboard 🥳' }, 1500);
         } catch (e) {
             console.log(e);
         }

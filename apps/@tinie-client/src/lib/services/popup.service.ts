@@ -18,6 +18,7 @@ class PopupService {
 
     open<T extends Record<PropertyKey, unknown>, R>(component: Component<T>, payload: T) {
         const result = grain<R | null>(null);
+        this.unsubscribe?.();
         this.unsubscribe = this.onceResult.subscribe((payload) => {
             result.set(payload);
         });
@@ -35,19 +36,12 @@ class PopupService {
         };
     }
 
-    private setResult(result: any) {
-        this.onceResult.set(result);
-        this.unsubscribe?.();
-        this.unsubscribe = null;
-    }
-
-    close(res: any = null) {
+    close(result: any = null) {
         [...(this.outlet?.childNodes ?? [])].forEach((n) => n.remove());
         document.body.style.overflow = 'auto';
         this._isOpen.set(false);
         this._closed.set(true);
-
-        this.setResult(res);
+        this.onceResult.set(result);
     }
 }
 
