@@ -11,20 +11,22 @@ import { TopNavigation } from '../lib/components/navigation/top-navigation.compo
 import { Hero } from '../lib/components/hero/hero.component';
 import { Footer } from '../lib/components/footer/footer.component';
 import { List } from '../lib/components/list/list.component';
-import { PopupOutlet } from '../lib/components/popup/popup-outlet';
+import { PopupOutlet } from '../lib/components/popup/popup-outlet.component';
 import { Input } from '../lib/components/shortening/input.component';
 import { Result } from '../lib/components/shortening/result.component';
 import { fetchShortUrlService } from '../lib/services/fetch-short-url.service';
 import { popupService } from '../lib/services/popup.service';
 import { listEmpty } from '../lib/grains/list-empty.grain';
+import { ToastOutlet } from '../lib/components/toast/toast-outlet.component';
 
 const App = createComponent((html) => {
     const onSubmit = (short: string) => {
         fetchShortUrlService.fetchShortUrl(short).subscribe((result) => {
+            // Handle OK response
             if (result) {
-                popupService.open(Result, { url: result! });
+                popupService.open(Result, { url: result });
             }
-        });
+        }, false);
     };
 
     return html`
@@ -54,8 +56,8 @@ const App = createComponent((html) => {
         ${List({})}
         <!-- Footer Component -->
         ${Footer({})}
-        <!-- Popup outlet -->
-        ${PopupOutlet({})}
+        <!-- Outlet -->
+        ${PopupOutlet({})} ${ToastOutlet({})}
     `;
 });
 
