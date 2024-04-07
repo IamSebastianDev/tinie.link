@@ -1,6 +1,6 @@
 /** @format */
 
-import { Grain, ReadonlyGrain, createDirective } from '@grainular/nord';
+import { ReadonlyGrain, createDirective } from '@grainular/nord';
 
 export const disabled = (input: boolean | ReadonlyGrain<boolean>) =>
     createDirective(
