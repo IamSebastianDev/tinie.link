@@ -28,8 +28,20 @@ export const Input = createComponent<InputProps>((html, { onSubmit }) => {
         onSubmit(form.link.rawValue);
     };
 
+    const errors = {
+        required: 'Enter a URL to shorten it 🥳',
+        url: 'Please provide a valid URL 🥺',
+    };
+
+    const controlValidity = (control: Control<any>) =>
+        combined([control.focused, control.valid, control.touched], ([focused, valid, touched]) => {
+            return !touched ? focused || valid : touched && !focused ? valid : true;
+        });
+
     // Handle link and input state
-    const disabled = popupService.isOpen;
+    const disabled = combined([popupService.isOpen, controlValidity(form.link)], ([isOpen, isValid]) => {
+        return isOpen || !isValid;
+    });
     popupService.isOpen.subscribe((isOpen) => {
         // If the popup is opened, disable
         if (isOpen) {
@@ -40,16 +52,6 @@ export const Input = createComponent<InputProps>((html, { onSubmit }) => {
         form.link.enable();
         form.link.reset();
     });
-
-    const errors = {
-        required: 'Enter a URL to shorten it 🥳',
-        url: 'Please provide a valid URL 🥺',
-    };
-
-    const controlValidity = (control: Control<any>) =>
-        combined([control.focused, control.valid, control.touched], ([focused, valid, touched]) => {
-            return !touched ? focused || valid : touched && !focused ? valid : true;
-        });
 
     return html`<form
         class="relative px-4 flex flex-col gap-2 items-center"
@@ -76,7 +78,7 @@ export const Input = createComponent<InputProps>((html, { onSubmit }) => {
                 label: 'Shorten me!',
                 type: 'submit',
                 classes:
-                    'rounded-full px-6 border-4 border-zinc-900 bg-sky-800 hover:bg-sky-600 text-zinc-300 active:bg-sky-400 duration-200 font-semibold whitespace-nowrap max-md:font-normal max-sm:text-sm max-sm:px-3 disabled:bg-slate-500',
+                    'rounded-full px-6 border-4 border-zinc-900 bg-sky-800 hover:bg-sky-600 text-zinc-300 active:bg-sky-400 duration-200 font-semibold whitespace-nowrap max-md:font-normal max-sm:text-sm max-sm:px-3 disabled:bg-zinc-800 disabled:text-zinc-500',
             })}
         </label>
         <div
