@@ -1,9 +1,9 @@
 {
-	"name": "tinie.link",
-	"repository": "https://github.com/IamSebastianDev/tinie.link.git",
-	"author": "Sebastian Heinz <sebsatian@iamsebastian.dev>",
-	"license": "MIT",
-	"private": true,
+  "name": "tinie.link",
+  "repository": "https://github.com/IamSebastianDev/tinie.link.git",
+  "author": "Sebastian Heinz <sebsatian@iamsebastian.dev>",
+  "license": "MIT",
+  "private": true,
   "workspaces": [
     "packages/*",
     "apps/*",
@@ -18,11 +18,11 @@
     "start:server": "cd ./apps/@tinie-server && bun run ./src/index.ts",
     "start:worker": "cd ./workers/@tinie-zookeeper && bun dev",
     "docker:build": "docker build -t tinie-webserver:latest -f ./docker/dockerfile.server .",
-    "db:migrate:local":"bun run packages/@tinie-dynamo/migrations/create-url-table.ts",
+    "db:migrate:local": "bun run packages/@tinie-dynamo/migrations/create-url-table.ts",
     "db:migrate:docker": "docker exec -it tinie-webserver sh -c 'bun run packages/@tinie-dynamo/migrations/create-url-table.ts' -d",
     "db:up": "docker compose -f ./docker/docker-compose.db.yml up -d",
     "db:down": "docker compose -f ./docker/docker-compose.db.yml down",
-    "system:up": "docker compose -f ./docker/docker-compose.network.yml up -d ", 
+    "system:up": "docker compose -f ./docker/docker-compose.network.yml up -d ",
     "system:down": "docker compose -f ./docker/docker-compose.network.yml down "
   },
   "devDependencies": {
@@ -37,5 +37,8 @@
   },
   "lint-staged": {
     "*.{ts,css,md}": "prettier --write"
+  },
+  "dependencies": {
+    "@iasd/handle-async": "^2.0.0"
   }
 }
