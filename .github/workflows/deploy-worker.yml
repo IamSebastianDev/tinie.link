@@ -1,0 +1,26 @@
+# This action is used to deploy the Cloudflare worker used as Zookeeper
+
+name: Deploy Zookeeper
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Build & Deploy Worker
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+        # The WD is the directory the worker resides, in this case ./workers/@tinie-zookeeper
+          workingDirectory: "./workers/@tinie-zookeeper"
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          secrets: |
+            WORKER_SECRET
+        env: 
+          WORKER_SECRET: ${{ secrets.WORKER_SECRET }}
