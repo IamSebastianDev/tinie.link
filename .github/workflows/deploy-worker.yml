@@ -10,6 +10,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     name: Build & Deploy Worker
     steps:
       - uses: actions/checkout@v4
@@ -20,6 +21,7 @@ jobs:
         # The WD is the directory the worker resides, in this case ./workers/@tinie-zookeeper
           packageManager: bun
           workingDirectory: "./workers/@tinie-zookeeper"
+          command: bun run deploy
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           secrets: |
