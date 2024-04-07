@@ -6,20 +6,25 @@ import { Button } from '../ui/button/button.component';
 import link from '../../../assets/images/link.svg';
 
 export type InputProps = {
-    onSubmit: (short: string) => void;
+    onSubmit: (short: string) => Promise<void>;
 };
 export const Input = createComponent<InputProps>((html, { onSubmit }) => {
     const form = createControlGroup({
         link: createControl<string | null>({ value: null }, [required]),
     });
 
-    const onFormSubmit = () => {
+    const onFormSubmit = async () => {
         if (!form.isValid || !form.link.rawValue) {
             // @todo: Handle error message
             return;
         }
 
-        onSubmit(form.link.rawValue);
+        // disable the input field
+        form.link.disable();
+        await onSubmit(form.link.rawValue);
+
+        form.link.reset();
+        form.link.enable();
     };
 
     return html`<form class="px-4" ${form.handle({ onSubmit: () => onFormSubmit() })}>

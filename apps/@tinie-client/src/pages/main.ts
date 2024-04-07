@@ -20,10 +20,14 @@ import { listEmpty } from '../lib/grains/list-empty.grain';
 
 const App = createComponent((html) => {
     const onSubmit = (short: string) => {
-        fetchShortUrlService.fetchShortUrl(short).subscribe((result) => {
-            if (result) {
-                popupService.open(Result, { url: result! });
-            }
+        return new Promise<void>((res) => {
+            fetchShortUrlService.fetchShortUrl(short).subscribe((result) => {
+                if (result) {
+                    popupService.open(Result, { url: result! }).result.subscribe(() => {
+                        res();
+                    });
+                }
+            });
         });
     };
 
