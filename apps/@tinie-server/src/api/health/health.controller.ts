@@ -13,5 +13,10 @@ export const HealthController = (app: App) =>
                 detail: {
                     description: 'Returns information about the health and status of the system.',
                 },
+            })
+            .get('/db', async ({ HealthService }) => await HealthService.db(), {
+                detail: {
+                    description: 'Returns information about the health and status of the connected storage services.',
+                },
             }),
     );
