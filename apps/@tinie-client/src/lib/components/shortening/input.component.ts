@@ -21,7 +21,11 @@ export const Input = createComponent<InputProps>((html, { onSubmit }) => {
     // Submit handler
     const onFormSubmit = async () => {
         if (!form.isValid || !form.link.isValid || !form.link.rawValue) {
-            // @todo: Handle error message
+            // Trigger validity check for link input
+            if (!form.link.rawValue) {
+                form.link.setValue('');
+            }
+            form.link.nativeElement?.blur();
             return;
         }
 

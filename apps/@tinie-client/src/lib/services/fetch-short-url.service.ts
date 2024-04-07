@@ -3,6 +3,7 @@
 import { grain, readonly } from '@grainular/nord';
 import { JSendResponse, UrlModel } from '@tinie/models';
 import { urlList } from '../grains/url-list.grain';
+import { toastMessageService } from './toast-message.service';
 
 class FetchShortUrlService {
     /**
@@ -33,7 +34,10 @@ class FetchShortUrlService {
                     urlList.update((cur) => [data, ...cur]);
                 }
 
-                // @todo -> handle error states
+                toastMessageService.dispatch({
+                    type: 'ERROR',
+                    content: `Oh no. Something went wrong, we couldn't create the short URL for you 😤`,
+                });
             });
 
         return readonly(url);

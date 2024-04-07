@@ -17,6 +17,7 @@ import { Result } from '../lib/components/shortening/result.component';
 import { fetchShortUrlService } from '../lib/services/fetch-short-url.service';
 import { popupService } from '../lib/services/popup.service';
 import { listEmpty } from '../lib/grains/list-empty.grain';
+import { ToastOutlet } from '../lib/components/toast/toast-outlet.component';
 
 const App = createComponent((html) => {
     const onSubmit = (short: string) => {
@@ -24,11 +25,6 @@ const App = createComponent((html) => {
             // Handle OK response
             if (result) {
                 popupService.open(Result, { url: result });
-            }
-
-            // Handle Error Response
-            if (!result) {
-                console.log('No short URL was created :(');
             }
         }, false);
     };
@@ -60,8 +56,8 @@ const App = createComponent((html) => {
         ${List({})}
         <!-- Footer Component -->
         ${Footer({})}
-        <!-- Popup outlet -->
-        ${PopupOutlet({})}
+        <!-- Outlet -->
+        ${PopupOutlet({})} ${ToastOutlet({})}
     `;
 });
 
