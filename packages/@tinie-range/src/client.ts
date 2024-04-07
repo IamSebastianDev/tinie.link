@@ -11,14 +11,13 @@ class Client {
     private async retry<T>(exec: () => Promise<T>, maximumRetry: number = 3, delay: number = 100): Promise<T> {
         let attempt = 0;
         while (attempt < maximumRetry) {
-            console.log(`Attempt to reach Zookeeper ${attempt}`);
             try {
                 // Attempt to execute the passed function
                 return await exec();
             } catch (error) {
                 attempt++;
+                console.log(`Attempt to reach Zookeeper ${attempt}`);
                 if (attempt >= maximumRetry) {
-                    // If we've reached the max attempts, throw the error
                     throw error;
                 }
                 // Wait for the exponential backoff delay before the next attempt
@@ -33,11 +32,9 @@ class Client {
     }
 
     async status(): Promise<boolean> {
-        const response = await fetch(`${this.connection}/ready`);
-        const { status, data } = (await response.json()) as JSendResponse<{ ok: boolean }>;
-
-        if (status === 'success') {
-            return data.ok;
+        const response = await fetch(`${this.connection}/health`);
+        if (response.status === 200) {
+            return true;
         }
 
         return false;
@@ -45,7 +42,9 @@ class Client {
 
     async getRange(): Promise<number | null> {
         const fetchRangeFromWorker = async () => {
-            const response = await fetch(this.connection);
+            const response = await fetch(`${this.connection}/range`, {
+                headers: { Authorization: `Bearer ${process.env.WORKER_SECRET}` },
+            });
             const { status, data } = (await response.json()) as JSendResponse<{ allocatedRangeId: number }>;
 
             if (status === 'success') {
@@ -55,7 +54,7 @@ class Client {
             return null;
         };
 
-        return this.retry(fetchRangeFromWorker, 10, 100);
+        return this.retry(fetchRangeFromWorker, 5, 100);
     }
 }
 
