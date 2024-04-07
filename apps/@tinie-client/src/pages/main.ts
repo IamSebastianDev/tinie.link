@@ -20,15 +20,17 @@ import { listEmpty } from '../lib/grains/list-empty.grain';
 
 const App = createComponent((html) => {
     const onSubmit = (short: string) => {
-        return new Promise<void>((res) => {
-            fetchShortUrlService.fetchShortUrl(short).subscribe((result) => {
-                if (result) {
-                    popupService.open(Result, { url: result! }).result.subscribe(() => {
-                        res();
-                    });
-                }
-            });
-        });
+        fetchShortUrlService.fetchShortUrl(short).subscribe((result) => {
+            // Handle OK response
+            if (result) {
+                popupService.open(Result, { url: result });
+            }
+
+            // Handle Error Response
+            if (!result) {
+                console.log('No short URL was created :(');
+            }
+        }, false);
     };
 
     return html`
