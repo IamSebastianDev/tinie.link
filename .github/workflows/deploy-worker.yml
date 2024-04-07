@@ -21,7 +21,7 @@ jobs:
         # The WD is the directory the worker resides, in this case ./workers/@tinie-zookeeper
           packageManager: bun
           workingDirectory: "./workers/@tinie-zookeeper"
-          command: bun run deploy
+          command: wrangler deploy --minify src/index.ts
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           secrets: |
