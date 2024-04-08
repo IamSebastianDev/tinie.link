@@ -1,14 +1,12 @@
 ---
 name: 🎁 Feature request
-about: Create a Feature Request
-title: "[🎁 Feature-Request]"
+about: Create a Request for a new Feature
+title: "[🎁 Feature]"
 labels: ['enhancement', 'feature request']
 assignees: IamSebastianDev
-
 ---
 
-
-Hej! Thanks for taking a look at [Tinie.link](https://tinie.link). If you're having missing a feature and would like to add it, you're in the right place. Describe the feature you're thinking off and we'll talk about it.
+<!-- Hej! Thanks for taking a look at [Tinie.link](https://tinie.link). If you're having missing a feature and would like to add it, you're in the right place. Describe the feature you're thinking off and we'll talk about it. -->
 
 ### Description
 
@@ -27,3 +25,4 @@ Hej! Thanks for taking a look at [Tinie.link](https://tinie.link). If you're hav
 - [ ] I have searched the existing feature request for similar issues and have found nothing?
 - [ ] I really like Tinie.link. Please do this.
 - [ ] Okay, I'll do it myself. (You are interested in contributing)
+- [ ] Fine, you can do it (We think this feature should be implemented)
