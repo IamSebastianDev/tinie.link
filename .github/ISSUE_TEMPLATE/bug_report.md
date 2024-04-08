@@ -7,7 +7,7 @@ assignees: 'IamSebastianDev'
 
 ---
 
-Hej! Thanks for taking a look at [Tinie.link](https://tinie.link). If you're having any issues, you're in the right place. Describe the issue you're having and we'll se what we can do about it.
+<!-- Hej! Thanks for taking a look at [Tinie.link](https://tinie.link). If you're having any issues, you're in the right place. Describe the issue you're having and we'll se what we can do about it. -->
 
 ### Description
 
@@ -25,7 +25,10 @@ Hej! Thanks for taking a look at [Tinie.link](https://tinie.link). If you're hav
 
 <!-- Screenshots, Os, Browser, any additional Context goes here -->
 
-### Finishing up
+### Finishing up with a Checklist
+
+<!-- You can mark what applies, and we will fix the rest -->
 
 - [ ] I have searched the existing issues for similar issues and have found nothing?
-- [ ] I really like Tinie.link. Please fix it.
+- [ ] I really like Tinie.link. Can I fix it? (You are interested in contributing)
+- [ ] Yes, that is actually a bug and not intended.
