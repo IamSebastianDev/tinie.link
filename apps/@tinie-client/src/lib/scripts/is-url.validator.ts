@@ -9,7 +9,7 @@ export const isUrl = (value: string | null): ControlError | null => {
 
     // A simple regex for URL validation that checks for protocol, domain, and optional parts
     // This regex is not exhaustive but provides a good balance for common URLs
-    const urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+    const urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?(\?\S*)?$/;
 
     if (!urlPattern.test(value)) {
         return { url: true };
