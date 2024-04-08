@@ -20,7 +20,7 @@ export default defineConfig({
         proxy: {
             '/api/': 'http://localhost:3000',
             '/api/v1/': 'http://localhost:3000',
-            '^/[A-Za-z0-9]{7}': {
+            '^/[A-Za-z0-9]{7}$': {
                 target: 'http://localhost:3000',
                 rewrite: (path) => `/api/v1/short-url/${path}`,
             },
