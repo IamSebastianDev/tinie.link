@@ -39,7 +39,7 @@ export const Input = createComponent<InputProps>((html, { onSubmit }) => {
 
     const controlValidity = (control: Control<any>) =>
         combined([control.focused, control.valid, control.touched], ([focused, valid, touched]) => {
-            return !touched ? focused || valid : touched && !focused ? valid : true;
+            return touched ? focused || valid : true;
         });
 
     // Handle link and input state
