@@ -32,6 +32,7 @@ COPY --from=install /temp/dev/node_modules node_modules
 COPY . .
 # Copy built client code to server code after the repository has been copied
 COPY --from=build /app/apps/@tinie-client/dist /app/apps/@tinie-server/public
+COPY --from=build /app/apps/@tinie-client/public/* /app/apps/@tinie-server/public/favicons
 
 # Clean up no longer needed files and directories
 RUN cd /app/apps/@tinie-client && rm -rf ./dist
