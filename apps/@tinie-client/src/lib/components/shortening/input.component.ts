@@ -54,7 +54,8 @@ export const Input = createComponent<InputProps>((html, { onSubmit }) => {
         }
 
         form.link.enable();
-        form.link.reset();
+        form.link.setValue(null);
+        form.link.nativeElement?.focus();
     });
 
     return html`<form
