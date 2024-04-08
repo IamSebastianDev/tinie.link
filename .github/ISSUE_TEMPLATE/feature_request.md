@@ -1,7 +1,7 @@
 ---
 name: 🎁 Feature request
 about: Create a Request for a new Feature
-title: "[🎁 Feature]"
+title: "🎁 [Feature]"
 labels: ['enhancement', 'feature request']
 assignees: IamSebastianDev
 ---
