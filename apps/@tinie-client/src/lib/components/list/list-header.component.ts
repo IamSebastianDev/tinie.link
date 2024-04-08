@@ -1,6 +1,6 @@
 /** @format */
 
-import { createComponent, derived, grain, on } from '@grainular/nord';
+import { createComponent, derived, on } from '@grainular/nord';
 import { Button } from '../ui/button/button.component';
 import { urlList } from '../../grains/url-list.grain';
 import { popupService } from '../../services/popup.service';
