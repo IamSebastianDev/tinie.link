@@ -15,12 +15,17 @@ import { toastMessageService } from '../../services/toast-message.service';
 
 export const ListItem = createComponent<{ entry: UrlModel }>((html, { entry }) => {
     const deleteEntry = () => {
-        popupService.open(Confirm, {}).result.subscribe((result) => {
-            if (!!result) {
-                urlList.update((list) => [...list.filter(({ short_url }) => short_url !== entry.short_url)]);
-                toastMessageService.dispatch({ type: 'SUCCESS', content: `Deleted successfully` });
-            }
-        });
+        popupService
+            .open(Confirm, {
+                heading: 'Are you sure you want to delete this entry?',
+                text: 'The created URL is only be saved in your browser, once you forget or delete it, there is no way for you to find it again. The URL itself will also not be deleted. Just forgotten probably.',
+            })
+            .result.subscribe((result) => {
+                if (!!result) {
+                    urlList.update((list) => [...list.filter(({ short_url }) => short_url !== entry.short_url)]);
+                    toastMessageService.dispatch({ type: 'SUCCESS', content: `Deleted successfully` });
+                }
+            });
     };
 
     const copyEntry = async () => {

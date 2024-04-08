@@ -5,12 +5,14 @@ import { UrlModel } from '@tinie/models';
 import { Button } from '../ui/button/button.component';
 import copy from '../../../assets/images/copy.svg';
 import { environment } from '../../../pages/env';
+import { toastMessageService } from '../../services/toast-message.service';
 
 export const Result = createComponent<{ url: UrlModel }>((html, { url }) => {
     const copyEntry = async () => {
         // Copy value to clipboard
         try {
             await navigator.clipboard.writeText(`${environment.base_url}/${url.short_url}`);
+            toastMessageService.dispatch({ type: 'SUCCESS', content: 'Copied successfully to clipboard 🥳' }, 1500);
         } catch (e) {
             console.log(e);
         }
