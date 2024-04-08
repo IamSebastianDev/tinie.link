@@ -32,6 +32,7 @@ class FetchShortUrlService {
                 if (status === 'success') {
                     url.set(data);
                     urlList.update((cur) => [data, ...cur]);
+                    return;
                 }
 
                 toastMessageService.dispatch({
