@@ -45,9 +45,18 @@ app.use(
     .use(loq())
     .use(documentation())
     .use(
-        Rewrite({
-            '^\\/[a-zA-Z0-9]{7}$': (pathname) => `/api/v1/short-url${pathname}`,
-        }),
+        Rewrite(
+            {
+                '^\\/[a-zA-Z0-9]{7}$': (pathname) => `/api/v1/short-url${pathname}`,
+            },
+            (app) => {
+                return app.onError(({ code, set }) => {
+                    if (code === 'NOT_FOUND') {
+                        return (set.redirect = '/404');
+                    }
+                });
+            },
+        ),
     )
     .get('/', () => Bun.file(resolve(join(process.cwd(), './public/index.html'))))
     .get('/404', () => Bun.file(resolve(join(process.cwd(), './public/not-found/index.html'))));

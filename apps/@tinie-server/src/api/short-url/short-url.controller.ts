@@ -29,12 +29,6 @@ export const ShortUrlController = (app: App) =>
                     set.redirect = long_url;
                 },
                 {
-                    error: async ({ code, error, set }) => {
-                        if (code === 'NOT_FOUND') {
-                            set.redirect = '/404';
-                            return true;
-                        }
-                    },
                     beforeHandle: async ({ params, CacheService, set }) => {
                         const cached_url = await CacheService.get(params.short);
 
