@@ -10,4 +10,7 @@ app.use(environmentDetails())
     .use(ApiRouter)
     // Start the application using the Port provided
     // by the environment.
-    .listen(process.env.PORT);
+    .listen({
+        port: process.env.PORT,
+        hostname: process.env.HOST,
+    });

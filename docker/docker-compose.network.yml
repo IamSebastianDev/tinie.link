@@ -32,6 +32,8 @@ services:
             - REDIS_TTL=${REDIS_TTL}
             - WORKER_CONNECT=host.docker.internal:8787
             - WORKER_SECRET=${WORKER_SECRET}
+            - PORT=3000
+            - HOST=localhost
         depends_on:
             - dynamodb
             - redis
