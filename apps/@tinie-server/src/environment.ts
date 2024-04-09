@@ -2,7 +2,7 @@
 
 declare module 'bun' {
     interface Env {
-        APP_NAME: string;
+        HOST: string;
         PORT: number;
     }
 }
