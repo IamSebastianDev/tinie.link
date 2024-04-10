@@ -173,3 +173,7 @@ dist
 
 # Finder (MacOS) folder config
 .DS_Store
+
+# Clear out everything in the public folder, except the .gitkeep files
+public/**/*
+!public/**/.gitkeep
