@@ -17,6 +17,9 @@ Tinie utilizes the following technologies and services:
 -   [TurboRepo](https://turbo.build/repo) as mono-repository orchestrator
 -   [Docker](https://www.docker.com) for local development setups
 -   [Render](https://render.com) to host the web server container
+-   [Hono](https://hono.dev) as http framework for the Cloudflare worker
+-   [Drizzle ORM](https://orm.drizzle.team/) as ORM for interacting with the Cloudflare D1 Db
+-   [Nørd.js](https://nordjs.dev) as Frontend Framework for the Client
 
 ## Local Development
 
@@ -26,10 +29,10 @@ To develop or test Tinie locally, follow this guide:
 -   **Clone the repository:** Run `git clone https://github.com/IamSebastianDev/tinie.link.git` to clone the repository.
 -   **Install package dependencies:** Run `bun install` to install dependencies.
 -   **Add the environment file:** Create a `.env.local` file in the workspace root and set the environment variables as shown in the `.env.example` file.
--   **Start the cloudflare workers:** Run `bun run start:worker` to start the worker. You might need to log in to your `Cloudflare` account.
+-   **Start the cloudflare workers:** Run `bun run start:worker` to start the worker. You might need to log in to your `Cloudflare` account. After authenticating, you can terminate this process again. (This step is only necessary the first time.)
 -   **Start the Databases:** Run `bun db:up` & `bun db:migrate:local` to initialize the databases.
--   **Start the Server:** Run `bun run start:server` to start the web server.
--   **Connect to the Server:** You can use a tool like [Postman](https://www.postman.com) to test the API
+-   **Start the Dev Mode using Turbo:** Run `bun dev` to start all applications in dev mode.
+-   **Connect:** Use Postman or the Browser to connect to the different services running on their respective ports.
 
 ## Architecture
 
