@@ -36,7 +36,7 @@ export const ListHeader = createComponent((html) => {
         <!-- Destination -->
         <div class="col-span-3 max-md:hidden">Original URL</div>
         <!-- Short -->
-        <div class="col-span-3">Short Url</div>
+        <div class="col-span-3 max-md:col-span-7">Short Url</div>
         <!-- Timestamp -->
         <button
             ${on('click', () => handleSortClick())}
@@ -45,7 +45,7 @@ export const ListHeader = createComponent((html) => {
             Date <img class="w-3 h-3" src="${sortIcon}" />
         </button>
         <!-- Delete all -->
-        <div class="col-span-1 justify-self-center relative grid place-items-center">
+        <div class="col-span-1 justify-self-center relative grid place-items-center ml-auto">
             ${Button({
                 label: 'Delete all',
                 onClick: () => handleDeleteAllClick(),
