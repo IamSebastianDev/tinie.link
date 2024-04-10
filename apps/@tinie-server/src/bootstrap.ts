@@ -38,7 +38,7 @@ app.use(
         },
     }),
 )
-    .use(staticPlugin({ assets: './public/assets', prefix: '/assets', ignorePatterns: [/\.ico/gim] }))
+    .use(staticPlugin({ assets: './public/assets', prefix: '/assets' }))
     .use(cors())
     .use(compression())
     //.use(helmet()) // Helmet appears to cause some issues with scalar, so we skip it for now
