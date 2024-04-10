@@ -3,5 +3,6 @@
         "streetsidesoftware.code-spell-checker",
         "usernamehw.errorlens",
         "esbenp.prettier-vscode",
+        "astro-build.astro-vscode"
     ]
 }
