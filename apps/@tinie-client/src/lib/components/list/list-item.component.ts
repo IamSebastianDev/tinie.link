@@ -40,7 +40,7 @@ export const ListItem = createComponent<{ entry: UrlModel }>((html, { entry }) =
 
     return html`<div
         key="${entry.short_url}"
-        class="grid grid-cols-9 text-zinc-200 font-sans font-light text-sm bg-zinc-900 px-4 py-3 place-items-start bg-opacity-70 gap-4 items-center border border-zinc-900"
+        class="grid grid-cols-9 text-zinc-200 font-sans font-light text-sm bg-zinc-900 px-4 py-3 place-items-start bg-opacity-70 gap-4 items-center border border-zinc-900 max-md:text-xs"
     >
         <!-- Destination -->
         <div class="col-span-3 max-md:hidden">
@@ -55,7 +55,7 @@ export const ListItem = createComponent<{ entry: UrlModel }>((html, { entry }) =
                 {
                     label: `${environment.base_url}/${entry.short_url}`,
                     href: `${environment.base_url}/${entry.short_url}`,
-                    classes: 'flex-row-reverse',
+                    classes: 'flex-row-reverse max-md:text-xs',
                 },
                 (html) => html`<img class="w-4 h-4" src="${external}" />`,
             )}
