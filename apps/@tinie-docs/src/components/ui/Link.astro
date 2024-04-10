@@ -1,0 +1,26 @@
+---
+import { classNames as c } from '../../scripts/class-names';
+
+interface Props {
+    disabled?: boolean;
+    href: string;
+    label?: string;
+    classes?: string[] | string;
+    target?: '_blank' | '_self';
+}
+
+const { href, label, classes, target } = Astro.props;
+---
+
+<a
+    href={href}
+    class={c(
+        'text-zinc-300 text-sm hover:text-amber-600 font-semibold hover:underline underline-offset-4 inline-flex flex-row items-center gap-2',
+        classes
+    )}
+    rel="no-referrer no-opener"
+    target={target}
+>
+    <slot />
+    <span> {label} </span>
+</a>
