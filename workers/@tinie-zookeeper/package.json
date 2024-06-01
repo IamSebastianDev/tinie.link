@@ -9,7 +9,7 @@
     "db:migrate:remote": "wrangler d1 execute tinie-zookeeper --remote --file=./src/db/schema/range-allocations.schema.sql"
   },
   "dependencies": {
-    "drizzle-orm": "^0.30.5",
+    "drizzle-orm": "^0.31.0",
     "hono": "^4.1.5"
   },
   "devDependencies": {
