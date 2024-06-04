@@ -176,4 +176,4 @@ dist
 
 # Clear out everything in the public folder, except the .gitkeep files
 public/**/*
-!public/**/.gitkeep
+!public/.gitkeep
