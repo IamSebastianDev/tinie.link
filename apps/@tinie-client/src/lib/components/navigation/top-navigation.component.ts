@@ -9,14 +9,6 @@ import { scrollTop } from '../../directives/scroll-top.directive';
 export const TopNavigation = createComponent((html) => {
     const links = [
         {
-            label: 'Story',
-            href: '',
-        },
-        {
-            label: 'Statistics',
-            href: '',
-        },
-        {
             label: 'API',
             href: '/api',
         },
